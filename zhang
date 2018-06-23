@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+class Zhang{
+ public:
+ double init(double x,double y)
+ {i=x;j=y;}
+ void show()
+ {cout<<i<<"  "<<j<<endl;}
+ private:
+ double i,j;
+}
