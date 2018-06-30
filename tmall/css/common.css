@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 1540px;
+    margin: 0 auto;
+}
+
+
+a{
+    text-decoration: none;
+}

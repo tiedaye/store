@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+
+    h1{
+        color: black;
+    }
+
+    #h1{
+        background: pink;
+    }
+    .h1{
+        background:wheat;
+    }
+
+/*验证clsl234一起写和分开写的区别,分开写时,style出只写其中一个就行,连着写时,style处也必须都写上*/
+    /*<!--检验id和class谁的优先级更高，id更高-->*/
+    .cls1{
+        background: green;
+        /*height:60px;   有这个的时候会显示一排绿,无字*/
+    }
+
+    .cls1cls2cls3cls4{
+        background: blue;
+    }
+    #div2 div{
+        background: purple;
+    }
+
+    /*id前用#,fffff是红色*/
+    /*后代选择器中间用空格就行*/
+    #div2  h1{
+        background: red;
+    }
+
+  /*>号是子代选择器 儿子*/
+    #div2>h1{
+        background: gray;
+    }
+
+
+</style>
+
+<div id="div1">
+        <div >
+            ffff
+        </div>
+    <h1 class="h1">qqqqq</h1>
+    <h1 id="h1">wwwww</h1>
+ </div>
+
+<!--只是简单的输出ddddd-->
+   <span>ddddd</span>
+
+<!--检验id和class谁的优先级更高，id更高-->
+<div id="div2" class="cls1 cls2 cls3 cls4">
+   <div>zzzzzz</div>
+</div>
+<div class="cls1cls2cls3cls4">
+    <h2>ssssss</h2>
+</div>
+<div  id="div2">
+    <h1>gggggggg</h1>
+    <div>
+        <h1>
+            oooooooo
+        </h1>
+    </div>
+</div>
+
+
+
+</body>
+</html>

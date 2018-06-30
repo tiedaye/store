@@ -1,0 +1,47 @@
+#header{
+    background: #f2f2f2;
+    height:32px ;
+    line-height: 32px;
+    /*垂直居中*/
+    color: #999;
+    font-weight: 100;
+    font-size: 12px;
+}
+#login-contain{
+
+/*float: left;*/
+    display: inline;
+}
+#login-contain a{
+    padding-left: 20px;
+}
+#login-contain a:hover{
+     color: red;
+}
+#div1{
+    float: right;
+}
+#div1 .div2{
+    float: left;
+    list-style: none;
+    padding-left: 14px;
+    /*color: red;*/
+}
+#div1 a:hover{
+    color: red;
+}
+.icon-ai66{
+    color: red;
+    font-size: 12px;
+    /*line-height: 32px;*/
+}
+#header .icon-shouji{
+    color: red;
+    font-size: 12px;
+    /*line-height: 32px;*/
+}
+#header .icon-wangzhandaohang-copy-copy{
+    color: blue;
+    font-size: 12px;
+    /*line-height: 32px;*/
+}
