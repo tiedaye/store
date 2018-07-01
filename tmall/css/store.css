@@ -1,11 +1,14 @@
 #header{
-    background: #f2f2f2;
+    background: red;
     height:32px ;
     line-height: 32px;
     /*垂直居中*/
-    color: #999;
+    color: white;
     font-weight: 100;
     font-size: 12px;
+}
+#header a{
+    color: white;
 }
 #login-contain{
 
@@ -16,7 +19,7 @@
     padding-left: 20px;
 }
 #login-contain a:hover{
-     color: red;
+     color: white;
 }
 #div1{
     float: right;
@@ -24,24 +27,61 @@
 #div1 .div2{
     float: left;
     list-style: none;
-    padding-left: 14px;
+    padding: 0 14px;
+    position: relative;
     /*color: red;*/
 }
+/*#div a{*/
+    /*color: white;*/
+/*}*/
 #div1 a:hover{
-    color: red;
+    color: yellow;
 }
-.icon-ai66{
-    color: red;
+
+#header .iconfont{
+    color: white;
     font-size: 12px;
-    /*line-height: 32px;*/
+    line-height: 32px;
 }
-#header .icon-shouji{
+#div1 .div3:hover>a{
+    color:red;
+    text-decoration: underline;
+}
+#div1 .div4 a:hover{
     color: red;
-    font-size: 12px;
-    /*line-height: 32px;*/
+    text-decoration: underline;
 }
-#header .icon-wangzhandaohang-copy-copy{
-    color: blue;
-    font-size: 12px;
-    /*line-height: 32px;*/
+
+#div1 .div3:hover{
+    background: #ffffff;
 }
+#div1 .div4 a{
+    color: #cccccc;
+}
+#div1 .div4{
+    border: 1px solid #ccc;
+    border-top: 0;
+    position: absolute;
+    top:32px;
+    left:0;
+    width: 100px;
+    display: none
+}
+#div1 .div3:hover .div4{
+    display: block;
+}
+ #div1 .div3::after{
+      content: '';
+     /*!*width: 0;*/
+     border: 3px solid transparent;
+     border-top-color: #bbbbbb;
+     position: absolute;
+     right:4px;
+     top: 16px;
+     transform-origin: 3px 1.5px;
+     /*transform: rotate(180deg);*/
+}
+ #div1 .div3:hover::after{
+     transition:transform  .1s linear;
+     transform: rotate(180deg);
+ }

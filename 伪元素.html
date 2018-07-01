@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            position: relative;
+        }
+        #div1 span::after{
+            content: '';
+            border: 3px solid transparent;
+            border-right-color: #63a35c;
+            position: absolute;
+        }
+        #div1::selection{
+            color: yellow;
+            background: red;
+        }
+        #div1::first-letter{
+            color: blue;
+            background: deeppink;
+        }
+        input::placeholder{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    家u按基督教肯定是南非警方开始软件巩华城废话肯定撒合法的你剋啊哥带你
+</div>
+<input type="text" placeholder="aaa">
+</body>
+</html>
