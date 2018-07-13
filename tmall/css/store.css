@@ -36,7 +36,7 @@
     color: yellow;
 }
 
-#header .iconfont{
+#header-menu .iconfont{
     color: white;
     font-size: 12px;
     line-height: 32px;
@@ -82,7 +82,7 @@
      position: absolute;
      right:4px;
      top: 16px;
-     transform-origin: 3px 2.5px;
+     transform-origin: 3px 1.5px;
      /*transform: rotate(180deg);*/
 }
  #header-menu .menu-hd:hover::after{
@@ -114,6 +114,10 @@
 }
  #header-menu .sj-menu p{
     color: black;
+}
+#header-menu .sj-menu a{
+    padding: 0 10px;
+    padding-left: 0;
 }
 #header-menu .web-menu{
     border: 1px solid #ccc;
@@ -152,6 +156,7 @@
 }
 #header-menu .site-hot a{
     padding: 0 20px;
+    padding-left: 0;
 }
 
 #header-menu .site-market{
@@ -160,7 +165,8 @@
     right: 400px
 }
 #header-menu .site-market a{
-    padding: 0 20px
+    padding: 0 20px;
+    padding-left: 0;
 }
 #header-menu .site-help{
     position: absolute;
@@ -168,7 +174,8 @@
     right: 100px
 }
 #header-menu .site-help a{
-    padding: 0 20px
+    padding: 0 20px;
+    padding-left: 0;
 }
 .search{
     height: 130px;
@@ -231,7 +238,7 @@
     color: #f10844;
 }
 .main-image{
-    margin-left: 200px;
+    margin-left: 300px;
     height: 30px;
 }
 .main-image img{
@@ -244,9 +251,13 @@
  float:left;
     margin-top: 4px;
     padding:0 10px;
+    font-size: 16px;
 }
 .main-image li:hover>a{
    color: red;
+}
+.banner{
+    position:relative;
 }
 .banner li a{
     display:block;
@@ -257,8 +268,31 @@
     width:100%;
 }
 .banner .nav{
-    color: #000000;
-    float: left;
+     color: #000000;
+     font-size: 14px;
+     /*float: left;*/
+     position: absolute;
+ }
+.banner .nav li{
+    width: 200px;
+    height: 36px;
+}
+.banner .shangpin{
+    background: red;
+    color: #ffffff;
+    margin-top: -36px;
+    line-height: 36px;
+    position:absolute;
+}
+.banner .iconfont{
+    font-size: 16px;
+    padding-left: 14px;
+    font-weight:bold;
+}
+.banner .font{
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: bold;
 }
 
 
