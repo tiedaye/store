@@ -37,17 +37,14 @@
 }
 
 #header-menu .iconfont{
-    color: white;
-    font-size: 12px;
-    line-height: 32px;
+    color: #ffffff;
+    font-size: 14px;
+    /*line-height: 32px;*/
 }
 #header-menu .menu-hd:hover>a{
     color:red;
     text-decoration: underline;
 }
-/*#header-menu .menu-hd  a.sn-serparator{*/
-    /*border-right: 1px solid #cccccc;*/
-/*}*/
 #header-menu .sub-menu a:hover{
     color: red;
     text-decoration: underline;
@@ -61,7 +58,7 @@
 }
 #header-menu .sub-menu{
     border: 1px solid #ccc;
-    border-top:10px;
+    border-top: 0;
     position: absolute;
     top:32px;
     left:0;
@@ -111,6 +108,7 @@
     display: none;
     padding-left: 10px;
     background: #ffffff;
+    z-index: 6;
 }
  #header-menu .sj-menu p{
     color: black;
@@ -131,6 +129,7 @@
     display: none;
     padding-left: 30px;
     height: 150px;
+    z-index: 6;
 }
 #header-menu .web-menu a{
     color: black;
@@ -183,6 +182,7 @@
 .search img {
     width: 240px;
     height: 130px;
+    margin-top: 9px;
     float: left;
 }
 
@@ -238,7 +238,7 @@
     color: #f10844;
 }
 .main-image{
-    margin-left: 300px;
+    margin-left: 320px;
     height: 30px;
 }
 .main-image img{
@@ -259,24 +259,35 @@
 .banner{
     position:relative;
 }
-.banner li a{
+.banner>ul a{
     display:block;
     width: 1230px;
+    height: 500px;
     margin: 0 auto;
 }
 .banner li img{
     width:100%;
+    height: 100%;
 }
 .banner .nav{
      color: #000000;
+    margin-left: 17px;
      font-size: 14px;
-     /*float: left;*/
      position: absolute;
  }
 .banner .nav li{
     width: 200px;
+    height: 31.2px;
+    line-height: 31.2px;
+}
+.banner .nav li a{
+    color: #ffffff;
+}
+.banner .nav .shangpin{
+    width: 200px;
     height: 36px;
 }
+
 .banner .shangpin{
     background: red;
     color: #ffffff;
@@ -287,13 +298,47 @@
 .banner .iconfont{
     font-size: 16px;
     padding-left: 14px;
-    font-weight:bold;
+    color: #ffffff;
+    opacity: 0.5;
 }
 .banner .font{
     font-size: 16px;
     margin-left: 8px;
     font-weight: bold;
 }
+.banner .main-font{
+    background: rgba(0,0,0,.5);
+
+}
+.banner .main-font .font1{
+    position: relative;
+}
+.banner .main-font .main-nz:hover{
+    background: #ffffff;
+}
+.banner .main-font .main-nz:hover>i,a{
+    color: #ff0036;
+}
+.banner .main-font .follow-nz{
+   border:1px solid #cccccc;
+    border-left: 0;
+    border-top-color: red;
+    background: #ffffff;
+    position:absolute ;
+    top: 0;
+    left:200px;
+    width: 800px;
+    line-height: 30px;
+    display: none;
+     /*height: 80px;*/
+}
+.banner .main-font .follow-nz a{
+    color: #000000;
+}
+.banner .main-font .main-nz:hover .follow-nz{
+    display: block;
+}
+
 
 
 
