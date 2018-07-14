@@ -104,9 +104,11 @@
     top:32px;
     right:0;
     width: 130px;
+    height: 180px;
     line-height:20px;
     display: none;
     padding-left: 10px;
+    padding-right: 10px;
     background: #ffffff;
     z-index: 6;
 }
@@ -114,8 +116,13 @@
     color: black;
 }
 #header-menu .sj-menu a{
-    padding: 0 10px;
-    padding-left: 0;
+    padding: 0 15px 5px 0;
+}
+#header-menu .sj-menu .shangjia{
+    border-bottom: 1px dotted #000000;
+}
+#header-menu .sj-menu .bangzhu{
+    border-bottom: 1px dotted #000000;
 }
 #header-menu .web-menu{
     border: 1px solid #ccc;
@@ -124,11 +131,9 @@
     position: absolute;
     top:32px;
     right:0;
-    width: 1250px;
-    line-height:35px;
+    width: 1198px;
     display: none;
     padding-left: 30px;
-    height: 150px;
     z-index: 6;
 }
 #header-menu .web-menu a{
@@ -142,55 +147,45 @@
     display: block;
 }
 #header-menu .site-hot{
-    padding:5px 0;
-    margin: 0 10px;
+    width: 455px;
+    float: left;
+    margin: 20px 0;
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+#header-menu .site-market{
+    width: 340px;
+    float: left;
+    margin: 20px 0;
+    padding: 0 40px;
+    border-right: 1px solid rgba(0,0,0,.1);
 
 }
-#header-menu .site-hot a{
+#header-menu .site-help {
+    float: left;
+    margin: 20px 0;
     padding: 0 20px;
-    padding-left: 0;
+}
+#header-menu .site-hot a{
+    padding: 0 40px 0 0;
 }
 #header-menu .site-hot p{
     color:#f56a00;
     font-size: 16px;
 }
-#header-menu .site-market{
-   clear: none;
-    padding: 5px 0;
-    margin:0 50px;
+#header-menu .site-market a{
+    padding: 0 40px 0 0;
 }
 #header-menu .site-market p{
     color:#2263d4;
     font-size: 16px;
 }
+#header-menu .site-help a{
+    padding: 0 50px 0 20px;
+}
 #header-menu .site-help p{
     color: #666;
     font-size: 16px;
-}
-
-#header-menu .site-market{
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*right: 400px*/
-    clear: none;
-    padding:5px 0;
-    margin: 0 100px;
-}
-#header-menu .site-market a{
-    padding: 0 20px;
-    padding-left: 0;
-}
-#header-menu .site-help{
-    position: absolute;
-    top: 0;
-    right: 100px;
-    /*padding-top: 5px;*/
-    /*margin-left:100px ;*/
-    /*border-right: 1px solid #cccccc;*/
-}
-#header-menu .site-help a{
-    padding: 0 20px;
-    padding-left: 0;
+    padding-left: 20px;
 }
 .search{
     height: 130px;
@@ -225,7 +220,7 @@
 
 }
 .search-contain .search-input input::placeholder{
-    color: rgb(102, 102, 102);
+    color: #cccccc;
     font-size: 14px;
 }
 .search-contain .search-input button{
@@ -296,7 +291,7 @@
     height: 31.2px;
     line-height: 31.2px;
 }
-.banner .nav li a{
+.banner .nav li a,.banner .nav li span{
     color: #ffffff;
 }
 .banner .nav .shangpin{
@@ -332,7 +327,7 @@
 .banner .main-font .main-nz:hover{
     background: #ffffff;
 }
-.banner .main-font .main-nz:hover>i,.banner .main-font .main-nz:hover>a{
+.banner .main-font .main-nz:hover>i,.banner .main-font .main-nz:hover>a,.banner .main-font .main-nz:hover>span{
     color: #ff0036;
 }
 .banner .main-font .follow-nz{
@@ -346,6 +341,7 @@
     width: 800px;
     line-height: 30px;
     display: none;
+    padding: 20px 20px;
      /*height: 80px;*/
 }
 .banner .main-font .follow-nz a{
