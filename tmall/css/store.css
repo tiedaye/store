@@ -99,7 +99,7 @@
 }
 #header-menu .sj-menu{
     border: 1px solid #ccc;
-    border-top: 0;
+    border-top: 100px;
     position: absolute;
     top:32px;
     right:0;
@@ -141,9 +141,23 @@
 #header-menu .menu-hd:hover .web-menu{
     display: block;
 }
+#header-menu .site-hot{
+    padding:5px 0;
+    margin: 0 10px;
+
+}
+#header-menu .site-hot a{
+    padding: 0 20px;
+    padding-left: 0;
+}
 #header-menu .site-hot p{
     color:#f56a00;
     font-size: 16px;
+}
+#header-menu .site-market{
+   clear: none;
+    padding: 5px 0;
+    margin:0 50px;
 }
 #header-menu .site-market p{
     color:#2263d4;
@@ -153,15 +167,14 @@
     color: #666;
     font-size: 16px;
 }
-#header-menu .site-hot a{
-    padding: 0 20px;
-    padding-left: 0;
-}
 
 #header-menu .site-market{
-    position: absolute;
-    top: 0;
-    right: 400px
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 400px*/
+    clear: none;
+    padding:5px 0;
+    margin: 0 100px;
 }
 #header-menu .site-market a{
     padding: 0 20px;
@@ -170,7 +183,10 @@
 #header-menu .site-help{
     position: absolute;
     top: 0;
-    right: 100px
+    right: 100px;
+    /*padding-top: 5px;*/
+    /*margin-left:100px ;*/
+    /*border-right: 1px solid #cccccc;*/
 }
 #header-menu .site-help a{
     padding: 0 20px;
@@ -316,7 +332,7 @@
 .banner .main-font .main-nz:hover{
     background: #ffffff;
 }
-.banner .main-font .main-nz:hover>i,a{
+.banner .main-font .main-nz:hover>i,.banner .main-font .main-nz:hover>a{
     color: #ff0036;
 }
 .banner .main-font .follow-nz{
