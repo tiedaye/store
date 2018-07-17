@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wuhuan</title>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            border-radius:50%;
+            border: 10px solid black;
+            position: absolute;
+        }
+        div:after{
+            content: "";
+            /*display: block;*/
+            width:200px;
+            height: 200px;
+            border-radius:50%;
+            border: 10px solid black;
+            position:absolute;
+            top: -10px;
+            left: -10px;
+        }
+        .blue{
+            border-color: blue;
+        }
+        .blue:after{
+            border-color: blue;
+            z-index: 1;
+            border-bottom-color: transparent;
+        }
+        .black{
+            border-color: black;
+            left: 240px;
+        }
+        .black:after{
+            border-color: black;
+            z-index: 1;
+            border-left-color: transparent;
+        }
+        .red{
+            border-color: red;
+            left: 470px;
+        }
+        .red:after{
+            border-color: red;
+            z-index: 2;
+            border-left-color:transparent ;
+        }
+        .yellow{
+            border-color: yellow;
+            top:110px;
+            left: 120px;
+        }
+        .yellow:after {
+            border-color: yellow;
+        }
+        .green{
+            border-color: green;
+            top:110px;
+            left: 350px;
+        }
+        .green:after{
+            border-color: green;
+            z-index: 1;
+            border-top-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="blue"></div>
+<div class="black"></div>
+<div class="red"></div>
+<div class="yellow"></div>
+<div class="green"></div>
+</body>
+</html>
