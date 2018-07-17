@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #000000;
+            perspective: 800px;
+            /*perspective-origin: -300px -400px;*/
+        }
+        #container {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: yyy 3s linear infinite;
+        }
+            @keyframes yyy {
+                from{
+
+                }
+                to{
+                    transform: rotateY(360deg);
+                }
+
+            }
+
+        div:not(#container){
+            /*width: 200px;*/
+            /*height: 200px;*/
+            background: rgba(255,255,255,.5);
+            position: absolute;
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 10px;
+            border: 2px dotted #00ff00;
+        }
+        #div1{
+           transform: translateZ(100px);
+       }
+        #div2{
+            transform:rotateY(180deg) translateZ(100px);
+        }
+        #div3{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        #div4{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        #div5{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        #div6{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+ <div id="container">
+        <div id="div1">我</div>
+        <div id="div2">🐮</div>
+        <div id="div3">爱</div>
+        <div id="div4">你</div>
+        <div id="div5">牛</div>
+        <div id="div6">仔</div>
+ </div>
+</body>
+</html>
