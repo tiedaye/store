@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: black;
+            perspective: 800px;
+        }
+        div{
+            width: 800px;
+            margin: 100px auto;
+
+
+        }
+        .div1{
+            /*position: absolute;*/
+            width: 300px;
+            height: 100px;
+            background: deeppink;
+            color: #0086b3;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            transform-style: preserve-3d;
+            animation: xxx 5s linear infinite;
+        }
+            @keyframes xxx {
+                0%{
+
+                }
+                50%{
+                    transform:rotateY(180deg) ;
+                }
+                100%{
+                    transform:rotateY(360deg) ;
+                }
+            }
+        /*.div2{*/
+            /*transform: rotateY(180deg );*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+ <div class="div1">
+     Welcome! 前世五百次回眸只为你经过......
+ </div>
+ <!--<div class="div2">-->
+     <!--Welcome! 前世五百次回眸只为你经过......-->
+ <!--</div>-->
+<script>
+    var str=window.prompt("小可爱是想进去看看吗？请先验证身份吧！ 输入你的姓名", "小可爱");
+    var num=window.prompt("please go on 你是我的......");
+    console.log(str);
+    console.log(num);
+</script>
+</body>
+</html>
