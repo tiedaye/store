@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #total div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ff0000;
+            float: left;
+            position: relative;
+        }
+       #total div:hover{
+             border-color: #00ff00;
+            z-index: 1;
+       }
+       .div3{
+           clear: both;
+           top:-1px;
+         }
+        .div2{
+            left: -1px;
+        }
+        .div4{
+            top: -1px;
+            left: -1px;
+        }
+
+    </style>
+</head>
+<body>
+ <div id="total">
+     <div class="div1"></div>
+     <div class="div2"></div>
+     <div class="div3"></div>
+     <div class="div4"></div>
+ </div>
+</body>
+</html>
