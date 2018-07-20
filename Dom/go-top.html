@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height:3000px;
+        }
+        #div1{
+            width:35px;
+            height: 74px;
+            background:url("go-top.jpeg") -22px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        #div1:hover{
+            background-position: -113px;
+        }
+    </style>
+</head>
+<body>
+zhdsndslgjesdng
+<div id="div1"></div>
+<script>
+ var ter= document.getElementById("div1");
+   ter.onclick=function () {
+       div1.style.backgroundPosition="-200px";
+       var top=document.documentElement.scrollTop;
+       // var top=document.body.scrollTop ;
+       var timer=setInterval(function () {
+           scrollTo(0,top*=0.6);
+           console.log(top);
+           if(top<1){
+               clearInterval(timer);
+               scrollTo(0,0);
+           }
+       },50)}
+
+
+</script>
+</body>
+</html>
