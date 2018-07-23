@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      #menu{
+          width: 200px;
+          margin: 100px auto;
+          border: 1px solid #000000;
+          text-align: center;
+      }
+      #menu>li a{
+          display: block;
+          width: 100%;
+          background: #000000;
+          color: #ffffff;
+      }
+      li{
+          list-style: none;
+      }
+        #menu a{
+            text-decoration: none;
+        }
+      #menu .sub-menu{
+          display: none;
+      }
+        #menu .sub-menu li{
+             height: 22px;
+            line-height: 26px;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <a href="">管理区</a>
+     <ul class="sub-menu">
+         <li>001</li>
+         <li>002</li>
+         <li>003</li>
+     </ul>
+    </li>
+    <li>
+        <a href="">交流区</a>
+        <ul class="sub-menu">
+            <li>004</li>
+            <li>005</li>
+            <li>006</li>
+        </ul>
+    </li>
+
+</ul>
+<script>
+    var aa = document.getElementsByTagName("a");
+    var asub = document.getElementsByClassName("sub-menu");
+        for(var i = 0;i<aa.length;i++){
+            aa[i].xx = i;
+            aa[i].onclick=function () {
+                // if(aSubMenu[this.xx].style.display == 'block'){
+//                    aSubMenu[this.xx].style.display = 'none';
+//                }else{
+//                    aSubMenu[this.xx].style.display ='block';
+//                }
+                if(getstyle(asub[this.xx],"display")=="none"){
+                    asub[this.xx].style.display="block";
+                }else{
+                    asub[this.xx].style.display="none"
+                }
+ // 只能获取到内联样式
+               return false;
+            }
+        }
+        function getstyle(elem,prop) {
+            if(elem.currentStyle){
+                return elem.currentStyle[prop];
+            }else{
+                return getComputedStyle(elem,false)[prop];
+            }
+        }
+</script>
+</body>
+</html>
