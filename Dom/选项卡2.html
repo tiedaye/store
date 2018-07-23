@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 400px;
+            margin: 100px auto;
+        }
+        #container ul{
+           height: 30px;
+        }
+        #container li{
+            list-style: none;
+            float: left;
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: #cccccc;
+            margin-right: 10px;
+            color: #ffffff;
+        }
+        #container div{
+            /*clear和定位有冲突*/
+            width: 400px;
+            height: 270px;
+            /*clear: both;*/
+            background: #ccc;
+            position: absolute;
+            border-top: 1px solid #000000;
+        }
+        #container li.selected{
+            background: #000000;
+        }
+        #container .show{
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul>
+        <li class="selected">111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <div class="show">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+<script>
+    var oLi = document.getElementsByTagName("li");
+    var aDiv = document.getElementById("container");
+    var oDiv = aDiv.getElementsByTagName("div");
+    var zIndex = 1;
+    for(var i = 0;i < oLi.length;i++){
+        oLi[i].index=i;
+        oLi[i].onclick=function () {
+            for(var j=0;j < oLi.length;j++){
+                oLi[j].className="";
+                // oDiv[j].style.zIndex="1"
+            }
+           this.className="selected";
+            oDiv[this.index].style.zIndex = ++zIndex;
+        }
+    }
+</script>
+</body>
+</html>
