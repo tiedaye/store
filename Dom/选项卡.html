@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            width: 400px;
+            margin: 100px auto;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            border: 1px solid #000000;
+            width: 100px;
+            margin-left: 10px;
+            text-align: center;
+            background: #ccc;
+            color: #ffffff;
+        }
+        div{
+            background: #ccc;
+            width: 400px;
+            height: 300px;
+            clear: both;
+            color: #000000;
+            position: absolute;
+            top:122px ;
+            left: 550px;
+            border-top: 1px solid #000000;
+            display: none;
+        }
+        .selected{
+            background: #000000;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="selected">111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<div class="show">aaa</div>
+<div>bbb</div>
+<div>ccc</div>
+<script>
+    var oli = document.getElementsByTagName("li");
+    var odiv = document.getElementsByTagName("div");
+    for(var i = 0;i < oli.length;i++){
+        oli[i].xx = i;
+        oli[i].onclick=function () {
+            for(var j = 0;j < oli.length;j++){
+                oli[j].className="";
+                odiv[j].className=""
+            }
+            this.className="selected"
+            odiv[this.xx].className = "show"
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
