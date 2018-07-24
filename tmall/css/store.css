@@ -606,15 +606,23 @@
     background: #ffffff;
     position: relative;
 }
-.total-ad .right-sec .spec .spe-img{
+.total-ad .right-sec .spec #spe-img{
     clear: both;
     height: 250px;
+    position: relative;
  }
-.total-ad .right-sec .spec .font2{
+.total-ad .right-sec .spec #font2{
     padding-top: 5px;
     padding-left: 10px;
 }
-.total-ad .right-sec .spec .font2 p{
+.total-ad .right-sec .spec #spe-img img{
+    position: absolute;
+    display: none;
+}
+.total-ad .right-sec .spec #spe-img img.selected{
+    display: block;
+}
+.total-ad .right-sec .spec #font2 p{
     width:230px ;
     height:57px ;
     line-height:57px;
@@ -624,9 +632,12 @@
     color:#000;
     background: #f1f1f1;
 }
-.total-ad .right-sec .spec .font2 p:hover{
-    background: #00b262;
+.total-ad .right-sec .spec #font2 p.selected{
+    background: #5abe73;
 }
+/*.total-ad .right-sec .spec #font2 p:hover{*/
+    /*background: #00b262;*/
+/*}*/
 .total-ad .right-sec .spec img{
     width: 462px;
     height: 225px;
