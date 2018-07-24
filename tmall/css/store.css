@@ -29,9 +29,6 @@
     position: relative;
     /*color: red;*/
 }
-/*#div a{*/
-    /*color: white;*/
-/*}*/
 #header-menu a:hover{
     color: yellow;
 }
@@ -258,8 +255,8 @@
     float: left;
     padding: 0 10px;
 }
-.main-image li{
- float:left;
+.main-image li:not(.right){
+    float:left;
     margin-top: 4px;
     padding:0 10px;
     font-size: 16px;
@@ -269,6 +266,7 @@
 }
 .banner{
     position:relative;
+    border-top: 1.5px solid red;
 }
 .banner>ul a{
     display:block;
@@ -276,7 +274,7 @@
     height: 500px;
     margin: 0 auto;
 }
-.banner li img{
+.banner .total-img li img{
     width:100%;
     height: 100%;
 }
@@ -288,7 +286,7 @@
  }
 .banner .nav li{
     width: 200px;
-    height: 31.2px;
+    /*height: 31.2px;*/
     line-height: 31.2px;
 }
 .banner .nav li a,.banner .nav li span{
@@ -316,12 +314,9 @@
     font-size: 16px;
     margin-left: 8px;
     font-weight: bold;
-}
-.banner .main-font{
-    background: rgba(0,0,0,.5);
 
 }
-.banner .main-font .font1{
+.banner .main-font{
     position: relative;
 }
 .banner .main-font .main-nz:hover{
@@ -330,26 +325,386 @@
 .banner .main-font .main-nz:hover>i,.banner .main-font .main-nz:hover>a,.banner .main-font .main-nz:hover>span{
     color: #ff0036;
 }
-.banner .main-font .follow-nz{
-   border:1px solid #cccccc;
-    border-left: 0;
-    border-top-color: red;
+.banner .main-font .main-mz:hover>i,.banner .main-font .main-mz:hover>a,.banner .main-font .main-mz:hover>span{
+    color: yellow;
+}
+.banner .main-font .main-mz:hover{
     background: #ffffff;
+}
+.banner .main-font {
+    background: rgba(0, 0, 0, .5);
+}
+.banner .main-font .follow-nz{
+    border:1px solid transparent;
+    border-left: 0;
+    background: #ccc;
     position:absolute ;
     top: 0;
     left:200px;
-    width: 800px;
+    width: 825px;
+    height: 500px;
     line-height: 30px;
     display: none;
-    padding: 20px 20px;
-     /*height: 80px;*/
 }
-.banner .main-font .follow-nz a{
+.banner .main-font .follow-nz a:not(.right){
     color: #000000;
+    float: left;
 }
 .banner .main-font .main-nz:hover .follow-nz{
     display: block;
 }
+.banner .main-font .main-mz:hover .follow-nz{
+    display: block;
+}
+.banner .main-font .follow-nz .left{
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    width: 643px;
+    height: 500px;
+    float: left;
+}
+.banner .main-font .follow-nz .left li{
+    width:493px;
+}
+.banner .main-font .follow-nz .left .dangji{
+    float: left;
+    width: 70px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.banner .main-font .follow-nz .summer{
+    float:left;
+    padding-top: 8px;
+    line-height: 25px;
+    border-bottom: 1px dotted #cccccc;
+}
+.banner .main-font .follow-nz .summer a{
+    margin-left: 10px;
+}
+.banner .main-font .follow-nz .left .jingxuan{
+    float: left;
+    width: 70px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.banner .main-font .follow-nz .maoni{
+    float:left;
+    padding-top: 8px;
+    line-height: 20px;
+    border-bottom: 1px dotted #cccccc;
+}
+.banner .main-font .follow-nz .maoni a{
+    margin-left: 20px;
+}
+.banner .main-font .follow-nz .left .langman{
+    float: left;
+    width: 70px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.banner .main-font .follow-nz .lianyi{
+    float:left;
+    padding-top: 8px;
+    line-height: 20px;
+    border-bottom: 1px dotted #cccccc;
+}
+.banner .main-font .follow-nz .lianyi a{
+    margin-left: 20px;
+}
+.banner .main-font .follow-nz .left .woman{
+    float: left;
+    width: 70px;
+    margin: 5px 0 0 20px;
+}
+.banner .main-font .follow-nz .xiuxian{
+    float:left;
+    padding-top: 8px;
+    line-height: 20px;
+}
+.banner .main-font .follow-nz .xiuxian a{
+    margin-left: 20px;
+}
+.banner .main-font .follow-nz .right{
+    width:100px;
+    float: left;
+    margin: 5px 2px;
+    line-height: 10px;
+    /*padding:5px 15px;*/
+
+}
+.banner .main-font .follow-nz .right li a img{
+    margin-right:1px ;
+    margin-bottom: -9px;
+}
+.banner .main-font .follow-nz .right img{
+    width:87px;
+    height: 50px;
+}
+.banner .main-font .follow-nz .right .spe a{
+    margin-top: 5px;
+    margin-left:10px ;
+}
+.title {
+    background: #cccccc;
+    overflow: hidden;
+    padding: 24px;
+}
+.brand{
+    float: left;
+    background: #ffffff;
+    margin-left: 5px;
+}
+.title .brand1 img{
+    width: 234px;
+    height: 316px;
+}
+.title .brand2 img{
+    width: 485px;
+    height: 316px;
+}
+.title .brand .text-font{
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 10px;
+    height: 55px;
+    line-height: 55px;
+}
+.title .brand a{
+    background: url("../image/more.png") no-repeat;
+    background-position: right center;
+    background-size: 20px 20px;
+    width:56px;
+    height: 54px;
+    float: right;
+    font-size: 16px;
+    font-weight: normal;
+    color: #666;
+}
+
+.main-pic{
+    background: #f5f5f5;
+    /*让父元素有高，解决塌陷问题   清除边距合并  解决溢出问题*/
+    overflow: hidden;
+}
+.main-pic .pic{
+    float: left;
+    width: 122px;
+    height: 108px;
+    position: relative;
+    margin: 1px 1px 0 0;
+    background: #ffffff;
+}
+.main-pic .pic img{
+    height: 50px;
+   width: 82%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.main-pic .pic a{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+.main-pic .pic:hover a{
+    display: block;
+    background: rgba(0,0,0,.5);
+}
+.main-pic .pic a div{
+    /*margin: 0 auto;*/
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+}
+.main-pic .pic a div span{
+    background: #FF0036;
+    border-radius: 10px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+.main-pic .pic a .iconfont{
+    color: #999;
+    font-size: 30px;
+    display: block;
+    /*position: absolute;*/
+   padding:0 20px;
+}
+.main-pic .ture a{
+    display: block;
+}
+.main-pic .ture a h6{
+    color: #999;
+    font-size:16px;
+    font-weight: 10;
+}
+.main-pic .ture:hover a{
+    background: #FF0036;
+}
+.main-pic .ture:hover h6{
+    font-size:16px;
+    color: white;
+    font-weight: bold;
+}
+.main-pic .ture a div{
+    margin-top: 20px;
+}
+.main-pic .ture:hover .iconfont{
+    color: white;
+    transition:transform  .3s linear;
+    transform: rotate(360deg);
+}
+.total-ad{
+    height: 700px;
+    background: #ccc;
+    padding-top: 10px;
+}
+.total-ad .green img{
+    width: 214px;
+    height: 25px;
+}
+.total-ad .green{
+    float: left;
+    padding-top:10px;
+    padding-left:10px;
+}
+.total-ad .font-ad{
+    float: right;
+    padding-top:10px;
+    padding-right:70px;
+}
+.total-ad .font-ad a{
+    padding-left: 20px;
+    color: #000;
+}
+.total-ad .font-ad a:hover{
+    text-decoration: underline;
+}
+.total-ad .lr-ad .left-sec{
+    /*overflow: hidden;*/
+    clear: both;
+    width: 235px;
+}
+.total-ad .lr-ad .right-sec{
+    /*float:left;*/
+    overflow: hidden;
+}
+.total-ad .right-sec .same{
+    border: 1px solid transparent;
+    width:236px;
+    height:307px;
+    float: left;
+    background: #ffffff;
+}
+.total-ad .right-sec .spec{
+    width: 475px;
+    height: 309px;
+    float: left;
+    background: #ffffff;
+    position: relative;
+}
+.total-ad .right-sec .spec .spe-img{
+    clear: both;
+    height: 250px;
+ }
+.total-ad .right-sec .spec .font2{
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.total-ad .right-sec .spec .font2 p{
+    width:230px ;
+    height:57px ;
+    line-height:57px;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    color:#000;
+    background: #f1f1f1;
+}
+.total-ad .right-sec .spec .font2 p:hover{
+    background: #00b262;
+}
+.total-ad .right-sec .spec img{
+    width: 462px;
+    height: 225px;
+    position: relative;
+}
+.total-ad img{
+    float: left;
+}
+.total-ad .left-sec img{
+    width:235px;
+    height: 618px;
+    padding-left:10px;
+}
+.total-ad .right-sec .same:hover{
+    border-color: #FF0036;
+}
+.total-ad .right-sec .same img{
+    width: 185px;
+    height: 185px;
+    margin-top: 24px;
+    margin-left: 26px;
+    /*vertical-align: middle;*/
+}
+.total-ad .right-sec .same .f3{
+    clear: both;
+    width: 135px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+}
+.total-ad .right-sec .same .f1{
+    color: black;
+    padding-left: 50px;
+}
+.total-ad .right-sec .same .f2{
+    color: #FF0036;
+    width:238px;
+}
+.total-ad .right-sec .spec .meng{
+    width: 291px;
+    height: 87px;
+    position: absolute;
+    top: 180px;
+    left: 40px;
+    background-image: url("../image/天猫图片长方形.png");
+    /*background-color: rgba(0,0,0,0);*/
+    color: black;
+    z-index: 1;
+}
+.total-ad .right-sec .spec .meng div{
+    width: 265px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+
+
+}
+.total-ad .right-sec .spec .meng div:first-child{
+    color: #5abe73;
+    font-size: 24px;
+    font-weight: bold;
+}
+.total-ad .right-sec .spec .meng div:last-child{
+    font-size: 20px;
+}
+.total-ad .right-sec .spec .meng img{
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 7px;
+    left: 30px;
+}
+
+
+
+
+
+
 
 
 
