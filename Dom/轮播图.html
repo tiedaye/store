@@ -42,6 +42,7 @@
             line-height: 20px;
             margin-left: 10px;
             background: bisque;
+            cursor: pointer;
         }
         #contain img.selected{
             display: block;
@@ -76,7 +77,11 @@
     var aimg = document.getElementsByTagName("img");
     var oprev = document.getElementById("prev");
     var onext = document.getElementById("next");
+    var ocontain = document.getElementById("contain")
     var nowindex = 0;
+    ocontain.onselectstart = function () {
+        return false;
+    }
     for( var i = 0;i<aLi.length;i++){
         aLi[i].index = i;
         aLi[i].onmouseover=function () {
@@ -123,6 +128,19 @@
         aLi[xx].className='selected';
         aimg[xx].className='selected';
     }
+     play();
+    ocontain.onmousemove = function () {
+        clearInterval(timer);
+    };
+    ocontain.onmouseout = function () {
+        play();
+    };
+    function play() {
+        timer = setInterval(function(){
+            onext.onclick();
+        },1000);
+    }
+
 </script>
 </body>
 </html>
