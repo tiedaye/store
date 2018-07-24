@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #contain{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #contain img{
+            width: 520px;
+            height: 280px;
+            position: absolute;
+            display: none;
+        }
+        #contain .num{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #contain .arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #contain .num li,.arrows span{
+            float: left;
+            color: red;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 10px;
+            background: bisque;
+        }
+        #contain img.selected{
+            display: block;
+        }
+        #contain li.selected{
+             background: #63a35c;
+        }
+    </style>
+
+</head>
+<body>
+<div id="contain">
+    <img class='selected' src="../tmall/image/ff%20-%20副本.jpg" alt="">
+    <img src="../tmall/image/bb%20-%20副本.jpg" alt="">
+    <img src="../tmall/image/dd%20-%20副本.jpg" alt="">
+    <img src="../tmall/image/tian.jpg" alt="">
+    <ul class="num">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="arrows">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+
+</div>
+
+<script>
+    var aLi = document.getElementsByTagName("li");
+    var aimg = document.getElementsByTagName("img");
+    var oprev = document.getElementById("prev");
+    var onext = document.getElementById("next");
+    var nowindex = 0;
+    for( var i = 0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover=function () {
+            // for(var j = 0;j<aLi.length;j++){
+            //     aLi[j].className='';
+            //     aimg[j].className="";
+            // }
+            // this.className="selected";
+            // aimg[this.index].className="selected";
+            changeimg(this.index);
+        }
+    }
+    onext.onclick = function () {
+        nowindex++;
+        if(nowindex ==aLi.length ){
+            nowindex=0;
+        }
+        // for(var j=0;j<aLi.length;j++){
+        //     aLi[j].className="";
+        //     aimg[j].className=''
+        // }
+        // aLi[nowindex].className='selected';
+        // aimg[nowindex].className='selected';
+        changeimg(nowindex)
+    }
+    oprev.onclick = function () {
+        nowindex--;
+        if(nowindex ==-1 ){
+            nowindex=aLi.length - 1;
+        }
+        // for(var j=0;j<aLi.length;j++){
+        //     aLi[j].className="";
+        //     aimg[j].className=''
+        // }
+        // aLi[nowindex].className='selected';
+        // aimg[nowindex].className='selected';
+        changeimg(nowindex);
+    }
+    function changeimg(xx) {
+        for(var j=0;j<aLi.length;j++){
+            aLi[j].className="";
+            aimg[j].className=''
+        }
+        aLi[xx].className='selected';
+        aimg[xx].className='selected';
+    }
+</script>
+</body>
+</html>
