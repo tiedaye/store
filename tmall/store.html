@@ -1015,26 +1015,26 @@
 
             <div class="right-sec">
                 <ul class="spec" >
-                    <li class="font2">
-                       <p>今日疯抢</p>
+                    <li id="font2">
+                       <p class="selected">今日疯抢</p>
                        <p>量贩装</p>
                     </li>
 
 
-                    <li class="spe-img">
+                    <li id="spe-img">
                        <a href="">
-                          <img src="image/paper.jpg" alt="">
+                          <img class="selected" src="image/paper.jpg" alt="">
                             <div class="meng">
                                 <div>
-                                    <img src="image/蒙牛小图标.png" alt="">
+                                    <!--<img src="image/蒙牛小图标.png" alt="">-->
                                     <p>限时限量疯抢</p>
                                 </div>
                                <div>1元超值疯抢中</div>
                            </div>
                        </a>
-                       <!--<a href="">-->
-                           <!--<img src="tmall/image/liu.jpg" alt="">-->
-                       <!--</a>-->
+                       <a href="">
+                           <img  src="image/liu.jpg" alt="">
+                       </a>
                     </li>
                 </ul>
 
@@ -1073,7 +1073,7 @@
 
                 <div class="same">
                     <a href="">
-                        <img src="image/coffee.jpg" alt="">
+                        <img " src="image/coffee.jpg" alt="">
                     </a>
                     <div class="f1 f3">【天猫超市】美的jhgjkhdhdfhb</div>
                     <div class="f2 f3">￥3199</div>
@@ -1093,13 +1093,36 @@
 </div>
 
 <script>
-    var afont = document.getElementsByClassName("font2");
-    var ap = afont.getElementsByTagName("p");
+    var afont = document.getElementById("font2");
+    var ap = afont.getElementsByTagName('p');
+    var aspe = document.getElementById('spe-img');
+    var aimg = aspe.getElementsByTagName("img")
+    // var ob = ap.getComputedStyle(ap,false).background;
     for(var i = 0;i<ap.length;i++){
+        ap[i].index = i;
         ap[i].onmouseover=function () {
 
+            for( var j=0;j<ap.length;j++){
+                ap[j].className="";
+                aimg[j].className='';
+            }
+             this.className="selected";
+            aimg[this.index].className='selected'
         }
     }
+
+    setInterval(function () {
+        for (var i = 0; i < ap.length; i++) {
+            for (var j = 0; j < ap.length; j++) {
+                ap[j].className = "";
+                aimg[j].className = '';
+            }
+            ap[i].className = "selected";
+            aimg[i].className = 'selected'
+        }
+    },2000)
+
+
 </script>
 
 </body>
