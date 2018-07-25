@@ -129,10 +129,11 @@
     ocontain.onmouseout = function () {
         play();
     };
+    function fn() {
+        onext.onclick();
+    }
     function play() {
-        timer = setInterval(function(){
-            onext.onclick();
-        },2000);
+        timer = setInterval(fn,1000);
     }
 
 </script>
