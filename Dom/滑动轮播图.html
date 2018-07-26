@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #contain{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #contain #imgs{
+            width: 2080px;
+            position: absolute;
+        }
+        #contain img{
+            width: 520px;
+            height: 280px;
+            float: left;
+        }
+        #contain .num{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 9999999;
+        }
+        #contain .arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            z-index: 9999999;
+        }
+        #contain .num li,.arrows span{
+            float: left;
+            color: red;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 10px;
+            background: bisque;
+            cursor: pointer;
+
+        }
+        #contain li.selected{
+            background: #0086b3;
+        }
+
+    </style>
+</head>
+<body>
+<div id="contain">
+    <div id="imgs">
+        <img src="../tmall/image/ff%20-%20副本.jpg" alt="">
+        <img src="../tmall/image/bb%20-%20副本.jpg" alt="">
+        <img src="../tmall/image/dd%20-%20副本.jpg" alt="">
+        <img src="../tmall/image/tian.jpg" alt="">
+    </div>
+
+    <ul class="num">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="arrows">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+
+</div>
+<script src="jslib.js"></script>
+<script>
+    var aLi = document.getElementsByTagName("li");
+    var aimg = document.getElementsByTagName("img");
+    var oprev = document.getElementById("prev");
+    var onext = document.getElementById("next");
+    var ocontain = document.getElementById("contain")
+    var oimgs = document.getElementById('imgs')
+    var nowindex = 0;
+
+    // ocontain.onselectstart = function () {
+    //     return false
+    // }
+    for( var i = 0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover=function () {
+            changeimg(this.index);
+        }
+        aLi[i].onselectstart = function(){
+            return false
+        }
+    }
+    onext.onclick = function () {
+        nowindex++;
+        if(nowindex ==aLi.length ){
+            nowindex=0;
+        }
+        changeimg(nowindex)
+    }
+    oprev.onclick = function () {
+        nowindex--;
+        if(nowindex ==-1 ){
+            nowindex=aLi.length - 1;
+        }
+        changeimg(nowindex);
+    }
+    function changeimg(xx) {
+        for(var j=0;j<aLi.length;j++){
+            aLi[j].className="";
+        }
+        aLi[xx].className='selected';
+        // oimgs.style.left = -aimg[0].offsetWidth * xx +'px';
+        animate(oimgs,{left:-aimg[0].offsetWidth * xx})
+
+    }
+    play();
+    ocontain.onmousemove = function () {
+        clearInterval(timer);
+    };
+    ocontain.onmouseout = function () {
+        play();
+    };
+    function fn() {
+        onext.onclick();
+    }
+    function play() {
+        timer = setInterval(fn,1000);
+    }
+</script>
+</body>
+</html>
