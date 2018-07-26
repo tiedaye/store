@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 350px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        #container #num{
+            width:880px;
+            height: 100px;
+            position: absolute;
+            left:0;
+
+        }
+        #container #font{
+            clear: both;
+            margin: 130px 100px;
+            width: 200px;
+            height: 50px;
+
+        }
+        #container #num li{
+            width: 100px;
+            height: 100px;
+            float: left;
+            background: #000000;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            color: #ffffff;
+            margin-right: 10px;
+        }
+        #container #font li{
+            width: 70px;
+            height: 50px;
+            background: #cccccc;
+            font-size: 16px;
+            color: #ffffff;
+            float: left;
+            margin: 0 auto;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="num">
+        <ul>
+            <li class="num1">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+
+    <ul id="font">
+        <li id="left">向左</li>
+        <li id="right">向右</li>
+    </ul>
+</div>
+<script src="jslib.js"></script>
+<script>
+    var onumber = document.getElementById('num');
+    var oleft = document.getElementById('left');
+    var oright = document.getElementById('right')
+    var speed =-2;
+        oleft.onclick = function () {
+          speed=-2;
+    };
+    oright.onclick = function () {
+        speed=2;
+    };
+        setInterval(function () {
+            var leftdis = onumber.offsetLeft;
+            onumber.style.left= leftdis + speed + 'px';
+                if(leftdis < -onumber.offsetWidth/2){
+                    onumber.style.left = 0;
+                 }
+                 if(leftdis>0){
+                    onumber.style.left=-onumber.offsetWidth/2 + 'px'
+                 }
+        },30)
+
+
+</script>
+</body>
+</html>
