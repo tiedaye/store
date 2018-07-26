@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            border: 1px solid #000000;
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #container #num{
+            width: 880px;
+            position: absolute;
+        }
+       #container li{
+            width: 100px;
+            height: 100px;
+            list-style: none;
+            font-size: 40px;
+            font-weight: bold;
+            color: #ffffff;
+            background: #000000;
+            float: left;
+           text-align: center;
+           line-height: 100px;
+           margin-right: 10px;
+        }
+        #container #font{
+            width: 150px;
+            margin: 200px auto;
+        }
+        #container #font span{
+            background: #cccccc;
+            padding: 10px 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="font">
+        <span id="left">向左</span>
+        <span id="right">向右</span>
+    </div>
+</div>
+<script>
+
+    var onum = document.getElementById('num');
+    var numleft = document.getElementById('left')
+    var numright = document.getElementById('right')
+    var speed = 2 ;
+    var play = function () {
+        var timer =  setInterval(function () {
+            onum.style.left = onum.offsetLeft - speed + 'px';
+            if(onum.offsetLeft < -onum.offsetWidth/2){
+                onum.style.left = 0;
+            }
+            if(onum.offsetLeft > 0){
+                onum.style.left = -onum.offsetWidth/2 + 'px';
+            }
+        },50);
+    };
+    play();
+    numleft.onclick = function(){
+    speed = 2;
+    play();
+}
+numright.onclick = function () {
+    speed = -2;
+    play();
+}
+
+</script>
+</body>
+</html>
