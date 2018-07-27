@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    00000
+    <div id="div2">
+        2222
+    </div>
+    999999
+    <div>
+        1111
+    </div>
+</div>
+<script>
+    var odiv1 = document.getElementById('div1');
+    // var odiv2 = document.getElementById('div2')
+    // odiv1.appendChild(odiv2);
+    // odiv1.removeChild(odiv2);
+    // var p = document.createElement("p")
+    // p.innerHTML='33333';
+    // odiv1.insertBefore(p,odiv2);
+    // console.log(odiv1.firstChild);
+    //  console.log(odiv1.hasChildNodes())
+    console.log(getfirst(odiv1))
+    function getfirst(elem) {
+        var f = elem.firstChild;
+          return f.nodeType!=1 ? getnext(f):f;
+    }
+    function getnext(elem) {
+        do{
+           elem = elem.nextSibling
+        } while(elem.nodeType!=1 && elem!= null)
+        return elem;
+    }
+</script>
+</body>
+</html>
