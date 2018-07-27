@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #image,#image2{
+            float: left;
+            position: relative;
+            width: 400px;
+            height: 400px;
+            cursor: move;
+        }
+        #image2{
+            overflow: hidden;
+        }
+        #image div{
+            width: 200px;
+            height: 200px;
+            background: rgba(200,200,200,.6);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        #image2 img{
+            position: absolute;
+        }
+        #image2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="image">
+    <img src="1.jpg" alt="">
+    <div id="div1"></div>
+</div>
+<div id="image2">
+    <img src="2.jpg" alt="">
+</div>
+<script>
+    var oimage = document.getElementById('image');
+    var odiv1 = document.getElementById('div1')
+    var oimage2 = document.getElementById("image2");
+    var oimag2img = oimage2.getElementsByTagName('img')[0];
+    oimage.onmouseover = function () {
+        odiv1.style.display = 'block';
+        oimage2.style.display = 'block'
+        oimage.onmousemove = function (e) {
+            e=e||window.event;
+            var oleft =  e.clientX - odiv1.offsetWidth/2;
+            var otop = e.clientY - odiv1.offsetHeight/2;
+
+            if(oleft > oimage.offsetWidth - odiv1.offsetWidth){
+                oleft = oimage.offsetWidth - odiv1.offsetWidth;
+            }
+            else if(oleft <0){
+                oleft = 0
+            }
+            if(otop > oimage.offsetHeight - odiv1.offsetHeight){
+                otop = oimage.offsetHeight - odiv1.offsetHeight;
+            }
+            else if(otop <0){
+                otop = 0
+            }
+            var radiusx = oleft/(oimage.offsetWidth -odiv1.offsetWidth);
+            var xxx = radiusx * (oimag2img.offsetWidth  - oimage2.offsetWidth)
+            var radiusy = otop/(oimage.offsetHeight -odiv1.offsetHeight);
+            var yyy = radiusy * (oimag2img.offsetHeight  - oimage2.offsetHeight)
+            oimag2img.style.left = -xxx  + 'px'
+            oimag2img.style.top = -yyy  + 'px'
+            odiv1.style.left = oleft + 'px'
+            odiv1.style.top = otop + 'px'
+
+        };
+      odiv1.onmouseup = function () {
+          oimage.onmousemove = null;
+      }
+    };
+    oimage.onmouseout = function () {
+        odiv1.style.display = 'none'
+        oimage2.style.display = 'none'
+    };
+</script>
+</body>
+</html>
