@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    1111
+    <div id="div2">
+        2222
+        <div id="div3">
+            3333
+        </div>
+    </div>
+</div>
+<script>
+    var odiv1 = document.getElementById('div1')
+    var odiv2 = document.getElementById('div2')
+    var odiv3 = document.getElementById('div3')
+    odiv1.addEventListener('click',function () {
+        console.log('冒泡div1')
+    },false);
+    odiv2.addEventListener('click',function () {
+        console.log('冒泡div2')
+    },false);
+    odiv3.addEventListener('click',function () {
+        console.log('冒泡div3')
+    },false)
+    odiv1.addEventListener('click',function () {
+        console.log('捕获div1')
+    },true);
+    odiv2.addEventListener('click',function () {
+        console.log('捕获div2')
+    },true);
+    odiv3.addEventListener('click',function () {
+        console.log('捕获div3')
+    },true)
+    //    按照W3C的标准，先发生捕获事件，后发生冒泡事件。
+    // 所以事件的整体顺序是：
+    // 非目标元素捕获 -> 目标元素代码顺序 -> 非目标元素冒泡。
+    //
+</script>
+</body>
+</html>
