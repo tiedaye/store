@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    11111
+    <div id="div2">
+        22222
+        <div id="div3">
+            33333
+        </div>
+    </div>
+</div>
+<script>
+var odiv1 = document.getElementById('div1')
+var odiv2 = document.getElementById('div2')
+var odiv3 = document.getElementById('div3')
+    // odiv1.onclick = function () {
+    //     console.log(1111);
+    // }
+    // odiv2.onclick = function () {
+    //     console.log(2222);
+    // }
+    // odiv3.onclick = function (e) {
+    //     console.log(3333);
+        // e.cancelBubble = true;
+        //   e.stopPropagation();
+// }
+    odiv1.addEventListener('click',function () {
+        console.log(1111);
+    },true);
+    // odiv1.addEventListener('click',function () {
+    //     console.log(2222);
+    // },true);
+    odiv2.addEventListener('click',function () {
+        console.log(2222);
+    },true);
+
+
+    // function fn() {
+    //     console.log(1111);
+    // }
+    // odiv1.addEventListener('click',fn,true)
+    odiv3.addEventListener('click',function () {
+        console.log(3333);
+    },true);
+// 1111和2222都会输出  正常写1会被2覆盖
+//     odiv1.removeEventListener('click',fn)
+//     odiv1.attachEvent('click',fn);
+//     odiv1.detachEvent('click',fn);
+</script>
+</body>
+</html>
