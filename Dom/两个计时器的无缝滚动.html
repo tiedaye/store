@@ -83,9 +83,9 @@
         var onumber = document.getElementById('num');
         var oleft = document.getElementById('left');
         var oright = document.getElementById('right')
-
+        var timer1,timer2;
         var play1 = function () {
-            var timer =  setInterval(function () {
+             timer1 =  setInterval(function () {
                 var leftnum = onumber.offsetLeft;
                 onumber.style.left = leftnum - 5 + 'px'
                 if(leftnum <-onumber.offsetWidth/2 ){
@@ -94,7 +94,7 @@
             },30)
         };
         var play2 = function () {
-            var timer =  setInterval(function () {
+             timer2 =  setInterval(function () {
                 var leftnum = onumber.offsetLeft;
                 onumber.style.left = leftnum + 5 + 'px'
                 if(leftnum >0){
@@ -104,14 +104,16 @@
         }
         play1();
         oleft.onclick = function () {
-            play1();
-            clearInterval();
+
+            clearInterval(timer2);
+            clearInterval(timer1);
             play1();
         };
         oright.onclick = function () {
+            clearInterval(timer2);
+            clearInterval(timer1);
             play2();
-           clearInterval();
-           play2();
+
         }
 
 </script>
