@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>你喜欢的运动是</h2>
+<input type="checkbox">足球
+<input type="checkbox">蓝球
+<input type="checkbox">排球
+<input type="checkbox">羽毛球
+<br/>
+<input type="button" value="全选" id="all">
+<!--<button id="all">全选</button>-->
+<button id="noall">全不选</button>
+<button id="back">反选</button>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('#all').on('click',function () {
+            $("input[type='checkbox']").prop('checked',true);
+            // 三种方式取对象都可以  第二种的前提是button不是用input写的
+        })
+        $('#noall').on('click',function () {
+            $(':input').prop('checked',false)
+        })
+        $('#back').on('click',function () {
+            // index 相当于下标 elem是原生对象  可以随便定义
+            $(':checkbox').each(function (index,elem) {
+                // console.log(xx);
+                if($(elem).prop('checked')){
+                    $(elem).prop('checked',false)
+                }else{
+                    $(elem).prop('checked',true)
+                }
+                // elem.checked =!elem.checked;
+            })
+        })
+
+    })
+</script>
+</body>
+</html>
