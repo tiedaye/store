@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<ul>
+    <li>iphone8</li>
+    <li>iphone7</li>
+    <li>oppo</li>
+    <li>vivo</li>
+    <li>huawei</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('#input').on('keyup', function () {
+            var value = $(this).val();
+            $('li').css({background:'',color:''});
+            if(value!=''){
+                $('li:contains(' + value + ')').css({background:'red',color:'#0000ff'})
+            }
+
+
+        })
+    })
+</script>
+</body>
+</html>
