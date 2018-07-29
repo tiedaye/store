@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #div1{
-            width: 200px;
-            height: 100px;
-            background: red;
-            border:2px solid #000000;
-        }
+        /*#div2{*/
+            /*height: 2000px;*/
+        /*}*/
+        /*#div1{*/
+            /*width: 200px;*/
+            /*height: 100px;*/
+            /*background: red;*/
+            /*border:2px solid #000000;*/
+            /*margin-top: 10px;*/
+        /*}*/
     </style>
 </head>
 <body>
-<div style="position: relative">
-    <div id="div1"></div>
+<div id='div2' style="position: relative">
+    <div id="div1" class="c1">111111
+    <!--<p>33333</p>-->
+    </div>
 </div>
+<div id="div3">11111</div>
 
 <script src="jquery-1.12.4.js"></script>
 <script>
-    var odiv1 = document.getElementById('div1');
-    odiv1.xx = 'zz';
-    odiv1.setAttribute('xx','zz');
+    // var odiv1 = document.getElementById('div1');
+    // odiv1.xx = 'zz';
+    // odiv1.setAttribute('xx','zz');
     // 下面这么写显示不出来 上面可以显示出来
     // $('#div1').attr('xx','yy');
     // $('#div1').prop('xx','yy');
@@ -36,7 +43,34 @@
     // console.log($('#div1').offset());
     // 相对于文档的坐标
    // $('#div1').offsetParent().css('background','red');
-   // 找到最近定位的祖先元素变换
+   // 找到最近定位的祖先元素进行变换
+   //  console.log($('#div1').position());
+    // 返回一个相对于父元素的偏移位置  含有left和top的对象 marginleft不好使 垂直方向好使
+    // $(document).scrollTop();
+    // $(document).scroll(function () {
+    //     console.log($(document).scrollTop())
+    // })
+    // 绑在document上
+    $(function () {
+        $('#div1').on('click',function () {
+            // $('#div3').append($('#div1').clone(true));
+            console.log(1111);
+        });
+        // $('#div3').addClass('.c1');
+        // $('#div3').add('#div1').css('background','red');
+        // $('#div2').wrapAll('<div class="c2" />');
+        // $('#div2').wrapAll('<div></div>');
+        // $('#div2').wrapInner('<div></div>');
+        // 选类，inner是每一个都包上  all是整体上包一个
+        // $('#div3').html('22222')
+        // 换所选的内容
+        var xx = $('#div1').detach();
+        // var xx = $('#div1').remove();
+        $('#div2').append(xx);
+
+
+    })
+
 </script>
 </body>
 </html>
