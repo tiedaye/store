@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            width: 400px;
+            margin: 100px auto;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            border: 1px solid #000000;
+            width: 100px;
+            margin-left: 10px;
+            text-align: center;
+            background: #ccc;
+            color: #ffffff;
+        }
+        div{
+            background: #ccc;
+            width: 400px;
+            height: 300px;
+            clear: both;
+            color: #000000;
+            position: absolute;
+            top:122px ;
+            left: 550px;
+            border-top: 1px solid #000000;
+            display: none;
+        }
+        .selected{
+            background: #000000;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="selected">111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<div class="show">aaa</div>
+<div>bbb</div>
+<div>ccc</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $('li').on('click',function () {
+       $(this).addClass('selected').siblings().removeClass('selected');
+       // console.log($(this).index());
+       $('div').eq($(this).index()).addClass('show').siblings().removeClass('show');
+   })
+</script>
+</body>
+</html>
