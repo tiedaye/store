@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li id="li1">111</li>
+    <li id="li2">222</li>
+    <li id="li3">333</li>
+</ul>
+<div id="div1">
+    <p id="p1">111</p>
+    <h2 id="h11">hhhh</h2>
+</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        // $('#ul1').on('click',function (e) {
+        //     // console.log(e.target)//原生对象
+        //     if($(e.target).is('#li2')){
+        //         console.log(3333)
+        //     }else{
+        //         console.log(222)
+        //     }
+        // })
+        // var qqq = $('li').map(function () {
+        //     return $(this).text();
+        // });
+        // console.log(qqq.get(2))
+       console.log($('#div1').contents().filter('#p1'));
+    })
+
+</script>
+</html>
