@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    div
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    var odiv = document.getElementById('div1');
+    // window加载的这个必须等html全部加载完才可以执行这里的函数 所以比较慢
+    window.onload = function () {
+    console.log(2222);
+   };
+    // 下面两个都是文档就绪函数  下面那个更常用  因为script没有写到head中，
+    // 所以文档就绪函数可以不写，但最好写上  只能html结构加载完就可以执行
+    $(document).ready(function () {
+        console.log(1111);
+    })
+    // $(function () {
+    //     console.log(1111);
+    // });
+    // $('#div1').css('background','red');
+       $(odiv).css('background','red');
+    //          js原生对象 ->  jq对象    $(obj)
+   // console.log($('#div1').get(0)) ;
+    //        jq对象 ->  js原生对象  $obj.get(0) 或者  $obj[0]
+   //  console.log($('#div1')[0]) ;
+</script>
+</body>
+</html>
