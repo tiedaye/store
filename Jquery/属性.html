@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background: red;
+            border:2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<div style="position: relative">
+    <div id="div1"></div>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    var odiv1 = document.getElementById('div1');
+    odiv1.xx = 'zz';
+    odiv1.setAttribute('xx','zz');
+    // 下面这么写显示不出来 上面可以显示出来
+    // $('#div1').attr('xx','yy');
+    // $('#div1').prop('xx','yy');
+    // 下面这么写显示不出来 上面可以显示出来
+    // $('#div1').height(400);
+    // console.log($('#div1').css('height'));
+    // console.log($('#div1').height());
+    // console.log($('#div1').innerHeight());
+    // 不包括border
+    // console.log($('#div1').outerHeight());
+    // 包括border  而且是垂直方向的水平不算
+    // console.log($('#div1').offset());
+    // 相对于文档的坐标
+   // $('#div1').offsetParent().css('background','red');
+   // 找到最近定位的祖先元素变换
+</script>
+</body>
+</html>
