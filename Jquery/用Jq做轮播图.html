@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #contain{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #contain img{
+            width: 520px;
+            height: 280px;
+            position: absolute;
+            display: none;
+        }
+        #contain .num{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #contain .arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #contain .num li,.arrows span{
+            float: left;
+            color: red;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 10px;
+            background: bisque;
+            cursor: pointer;
+        }
+        #contain img.selected{
+            display: block;
+        }
+        #contain li.selected{
+             background: #63a35c;
+        }
+    </style>
+
+</head>
+<body>
+<div id="contain">
+    <img class='selected' src="../tmall/image/ff%20-%20副本.jpg" alt="">
+    <img src="../tmall/image/bb%20-%20副本.jpg" alt="">
+    <img src="../tmall/image/dd%20-%20副本.jpg" alt="">
+    <img src="../tmall/image/tian.jpg" alt="">
+    <ul class="num">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="arrows">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+       $('li').on('mouseover',function () {
+           $(this).addClass('selected').siblings().removeClass('selected');
+           // console.log($(this).index());
+           $('img').eq($(this).index()).addClass('selected').siblings()
+               .removeClass('selected');
+       });
+    // $('#prev').on('click',function () {
+    //
+    // })
+</script>
+</body>
+</html>
