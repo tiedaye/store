@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        /*body{*/
+            /*background: url("web-image/背景.jpg") no-repeat;*/
+        /*}*/
         #container{
             width: 800px;
             margin: 50px auto;
@@ -11,26 +14,30 @@
         }
         #container li{
             border: 1px solid transparent;
-            background-image: url("../tmall/image/背景4.jpg");
+            background: #f1f1f1;
             width: 100px;
             height: 100px;
             border-radius: 50%;
             list-style: none;
             text-align: center;
             line-height: 100px;
-            color: orchid;
+            color: #f1f1f1;
             font-weight: bold;
             float: left;
-            margin-left: 50px;
+            margin-left: 77px;
+        }
+        #container li.selected{
+            font-weight: bold;
+            color: deeppink;
         }
         #container div{
             position: absolute;
             top:130px;
-            left:124px
+            left:90px
         }
         #container img {
             position: absolute;
-            width: 500px;
+            width: 700px;
             height: 500px;
             /*clear: both;*/
             border-radius: 10%;
@@ -40,48 +47,42 @@
 <body>
 <div id="container">
     <ul>
-        <li>终于</li>
+        <li class="selected">终于</li>
         <li>等到你</li>
         <li>还好</li>
         <li>我没放弃</li>
     </ul>
     <div id="div1">
         <a href="">
-            <img src="../tmall/image/bb%20-%20副本.jpg" alt="">
+            <img class='selected' src="web-image/春.jpg" alt="">
         </a>
         <a href="">
-            <img src="../tmall/image/ff%20-%20副本.jpg" alt="">
+            <img src="web-image/气球.jpg" alt="">
         </a>
         <a href="">
-            <img src="../tmall/image/dd%20-%20副本.jpg" alt="">
+            <img src="web-image/秋.jpg" alt="">
         </a>
         <a href="">
-            <img src="../tmall/image/tian.jpg" alt="">
+            <img src="web-image/城市小路.jpg" alt="">
         </a>
-
     </div>
 </div>
 <script src="../Dom/jslib.js"></script>
 <script>
     var aimg = document.getElementsByTagName('img');
-    var odiv1 = document.getElementById('div1')
+    var ali = document.getElementsByTagName('li')
     var zIndex = 4;
     var nowindex =0;
-    for(var i= 0;i<aimg.length;i++){
-        aimg[i].style.zIndex = aimg.length - i;
-    };
-    for (var i= 0 ;i<aimg.length;i++) {
-        aimg[i].onclick = function(){
-            setInterval(function () {
-                this.style.zIndex = ++zIndex;
-                this.style.opacity = 0;
-                animate(this, {opacity: 100})
+        setInterval(function () {
+            if(nowindex ==aimg.length){
+                nowindex = 0;
+            }
+            aimg[nowindex].style.zIndex = ++zIndex;
+            aimg[nowindex].style.opacity = 0;
+            animate(aimg[nowindex], {opacity: 100})
+            ali[nowindex].className = 'selected'
+            nowindex++;
             },1000);
-        }
-
-    }
-
-
 </script>
 </body>
 </html>
