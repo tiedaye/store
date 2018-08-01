@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #header,#nav,#footer{
+            width: 960px;
+            height: 100px;
+            background: #cccccc;
+            margin: 30px auto;
+            text-align: center;
+            line-height: 100px;
+        }
+        #image{
+            width: 960px;
+            margin: 0 auto;
+            background: url("小海豹.jpg") no-repeat;
+            padding-top: 540px;
+            background-size: contain;
+        }
+        #image img{
+            width: 100%;
+        }
+        #container{
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #left{
+            width: 600px;
+            margin-right: 30px;
+            height: 300px;
+            background: #00ff00;
+            float: left;
+        }
+        #right{
+            width: 330px;
+            height: 300px;
+            background: yellow;
+            float: left;
+        }
+        @media (max-width: 960px) {
+            #header,#nav,#footer,#image,#container{
+                width: 100%;
+            }
+            #image{
+                padding-top: 56%;
+            }
+            #left{
+                width: 60%;
+                margin-right: 2%;
+            }
+            #right{
+                width: 38%;
+            }
+        }
+        @media (max-width: 560px) {
+            #left{
+                width: 100%;
+                margin-right: 0;
+            }
+            #right{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <h2>页头</h2>
+</div>
+<div id="nav">
+    <h2>导航</h2>
+</div>
+<div id="image">
+
+</div>
+<div id="container">
+    <div id="left">
+        zhamd bsa hdaskk sjbd hkla zhan gsjuang jdan kha ngn ias hiudl sas ha  dh nizs juoni shuox ing
+    </div>
+    <div id="right">
+        zhamd bsa hdaskk sjbd hkla zhan gsjuang jdan kha ngn ias hiudlsas ha  dh nizs juoni shuox ing
+    </div>
+</div>
+<div id="footer">
+    <h2>页脚</h2>
+</div>
+</body>
+</html>
