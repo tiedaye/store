@@ -19,8 +19,16 @@
             width: 960px;
             margin: 0 auto;
             background: url("小海豹.jpg") no-repeat;
-            padding-top: 540px;
+            /*padding-top: 540px;  第一种*/
+            /*第二种*/
+            overflow: hidden;
             background-size: contain;
+        }
+        /*!*第二种方法*!  加个子孩子*/
+        #image:after{
+            content: '';
+            display: block;
+            margin-top: 540px;
         }
         #image img{
             width: 100%;
@@ -47,8 +55,13 @@
             #header,#nav,#footer,#image,#container{
                 width: 100%;
             }
-            #image{
-                padding-top: 56%;
+            /*第一种*/
+            /*#image{*/
+                 /*padding-top: 56%;*/
+             /*}*/
+            /*第二种*/
+            #image:after{
+                margin-top: 56%;
             }
             #left{
                 width: 60%;
