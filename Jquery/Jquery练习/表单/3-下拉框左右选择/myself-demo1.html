@@ -37,12 +37,21 @@
                 $('#select2 option').appendTo('#select1')
             });
             // 双击选项
-            $('#select1 option').dblclick(function () {
-                $('selected',this).appendTo('#select2');
-            })
-            $('#select2 option').dblclick(function () {
-                $('selected',this).appendTo('#select1');
-            })
+            // $('#select1 option').dblclick(function () {
+            //     $(this).appendTo('#select2');
+            // })
+            // $('#select2 option').dblclick(function () {
+            //     $(this).appendTo('#select1');
+            // })  回不来
+            $('#select1').dblclick(function(){ //绑定双击事件
+                //获取全部的选项,删除并追加给对方
+                $("option:selected",this).appendTo('#select2'); //追加给对方
+            });
+            //双击选项
+            $('#select2').dblclick(function(){
+                $("option:selected",this).appendTo('#select1');
+                //this 表示在this下找被选中的
+            });
         })
 
     </script>

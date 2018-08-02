@@ -19,7 +19,7 @@
 <body>
 <div id='div2' style="position: relative">
     <div id="div1" class="c1">111111
-    <!--<p>33333</p>-->
+    <p>33333</p>
     </div>
 </div>
 <div id="div3">11111</div>
@@ -64,7 +64,7 @@
         // 选类，inner是每一个都包上  all是整体上包一个
         // $('#div3').html('22222')
         // 换所选的内容
-        var xx = $('#div1').detach();
+        var xx = $('#div1').detach('p');
         // var xx = $('#div1').remove();
         $('#div2').append(xx);
 
