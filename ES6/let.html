@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+</body>
+<script>
+    // 变量提升 var a； 相当于a声明了 但未定义  undefined
+    // console.log(a);
+    // var a = 4;
+    // let a=4;
+    // let a=2;  let不能重复赋值  但可以写 a = 2；
+    // console.log(a);
+ //
+ //    {
+ //        let a =9;
+ //    }
+ //    console.log(a);// 不好使 因为用let定义 不能往里找  块级作用域
+ //
+ //    var a =2;
+ // function f1() {
+ //     let a = 3;  a=2;在这不好使  暂时性死区
+ //     console.log(a);
+ // }
+ // f1();
+ // console.log(a);
+ // console.log(b);
+// var ali = document.getElementsByTagName('li');
+// let 块级作用域  大括号都是它的作用域
+//    let 一个外部函数里面声明了一个内部函数，内部函数里面调用了
+//     外部函数的局部变量，这个时候，局部变量不被释放  闭包
+//     for(var i=0;i<ali.length;i++){
+//         ali[i].index = i;
+//         ali[i].onclick= function () {
+//             console.log(this.index);
+//         }
+//     }
+    // for(let i=0;i<ali.length;i++){
+    //     ali[i].onclick= function () {
+    //         console.log(i);
+    //     }
+    // }
+    // 两个函数形成闭包  局部变量不会被释放
+    // for(var i=0;i<ali.length;i++){
+    //     (function (index) {
+    //         ali[index].onclick = function () {
+    //             console.log(index);
+    //         }
+    //     })(i)
+    //
+    // }
+
+   // 闭包  两个作用域也可以
+    // 一个外部函数里面声明了一个内部函数，内部函数里面调用了
+    // 外部函数的局部变量，这个时候，局部变量不被释放
+    function f3() {
+        var a = 5;
+        function f4() {
+            let a =4;
+            console.log(a)
+        }
+        // console.log(a);
+        return f4;
+
+    }
+    var result = f3();
+    result();
+
+//    var f2 =  function () {
+//         console.log(3333)
+//     };
+//     f2()
+//     函数立即调用
+//     (function () {
+//         console.log(3333)
+//     })()
+</script>
+</html>
