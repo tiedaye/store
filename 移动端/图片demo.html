@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100% ;
+        }
+        #container img{
+            width: 25%;
+            height: 100px;
+            float: left;
+            border-right: 4px solid #000;
+            border-bottom: 4px solid #000;
+            box-sizing: border-box;
+        }
+        #bigimg{
+            display: none;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-color: #000000;
+            background-size: contain;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="bigimg">
+</div>
+</body>
+<script src="zepto.js"></script>
+<script src="touch.js"></script>
+<script>
+    $(function () {
+        var str ='';
+        for(var i = 0;i<28;i++){
+            str +='<img src="卡通图片/'+(i+1)+'.jpg">';
+        }
+        // console.log(str)
+        $('#container').html(str);
+        $('#container').on('tap','img',function () {
+            $('#container').hide();
+            // console.log($(this).index());
+            $('#bigimg').css('background-image', 'url("卡通图片/'+($(this).index()+1)+'.jpg")')
+                .show() ;
+            nowindex = $(this).index();
+        });
+        $('#bigimg').on('tap',function () {
+            $('#container').show();
+            $('#bigimg').hide();
+
+        }).on('swipeLeft',function () {
+            nowindex++;
+            if(nowindex ==28){
+                nowindex =0;
+            }
+           $(this).css('background-image', 'url("卡通图片/'+(nowindex+1)+'.jpg")')
+        });
+        $('#bigimg').on('swipeRight',function () {
+            nowindex--;
+            if(nowindex ==-1){
+                nowindex =27;
+            }
+            $(this).css('background-image', 'url("卡通图片/'+(nowindex+1)+'.jpg")')
+
+        })
+
+    })
+
+</script>
+</html>

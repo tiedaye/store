@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+        }
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #00ff00;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+    <script src="../Dom/jslib.js"></script>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+    <script src="fastclick.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+            $('#div1').on('click',function () {
+                console.log(11111);
+            });
+            $('#div2').on('tap',function () {
+                $(this).hide();
+                console.log(22222);
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1">
+
+</div>
+<div id="div2">
+
+</div>
+</body>
+</html>
