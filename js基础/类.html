@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //person 是一个类
+        function Person() {
+            // this.name = 'zs'
+            // this.xxx = {name:'ww',age:'12'};
+        }
+        //原型对象
+        Person.prototype.xxx = {name:'ww',age:'12'};
+      // 把这句话写在外面  只要一个变所有生成的对象都会改变  写在原型里 事件委托
+      //   写在里面就是改谁谁变
+        Person.prototype.say = function () {
+            // this.name = 'lisi';
+            // this.xxx.name = 'zhaoliu';
+            console.log(this.xxx.name)
+        };
+        //p1是对象
+        var p1 = new Person();
+          p1.say();
+          p1.xxx.name ='lisi';
+          p1.say();
+          var p2 = new Person();
+          p2.say();
+
+          //  son.prototype = new Person()
+          // function son(n) {
+          //     this.name = n
+          // }
+        //   var s1 = new son('hddd');
+        //   s1.say();
+        // var s2 = new son('qqqq');
+        //   s2.say();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
