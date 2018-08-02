@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <img id=picture src="../image/zz.jpg" class=imgname alt="">
+    <img id=picture src="../tmall/image/zz.jpg" class=imgname alt="">
         <div id="div1" class="a">
             <p>12345678</p>
         </div>
@@ -24,16 +24,18 @@
     var img=document.getElementById("picture");
     img.onclick=function(){
         console.log(1111);
-    }
+    };
 
     var div1=document.getElementById("div1");
     console.log(div1.innerHTML);
+    // div1中的所有内容
     console.log(img.tagName);
     console.log(img.className);
+    // class
     div1.onclick=function () {
-      //   div1.innerHTML="789055";
-      // div1.style.background="red";
-        div1.className="b";
+        div1.innerHTML="789055";
+      div1.style.background="red";
+      //   div1.className="b";
     }
 
 </script>
