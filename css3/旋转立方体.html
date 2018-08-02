@@ -16,18 +16,27 @@
             transform-style: preserve-3d;
             animation: yyy 3s linear infinite;
         }
+        @keyframes yyy {
+            from{
+
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+
 
 
         div:not(#container){
-            /*width: 200px;*/
-            /*height: 200px;*/
+            width: 200px;
+            height: 200px;
             background: rgba(255,255,255,.5);
             position: absolute;
-            font-size: 40px;
+            font-size: 60px;
             text-align: center;
             line-height: 200px;
-            border-radius: 10px;
-            border: 2px dotted #00ff00;
+            border-radius: 10%;
+            border: 1px solid #ffffff;
         }
         #div1{
            transform: translateZ(100px);
@@ -51,12 +60,12 @@
 </head>
 <body>
  <div id="container">
-        <div id="div1">我</div>
-        <div id="div2">🐮</div>
-        <div id="div3">爱</div>
-        <div id="div4">你</div>
-        <div id="div5">牛</div>
-        <div id="div6">仔</div>
+        <div id="div1">1</div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <div id="div4">4</div>
+        <div id="div5">5</div>
+        <div id="div6">6</div>
  </div>
 </body>
 </html>
