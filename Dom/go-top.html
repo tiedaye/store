@@ -17,11 +17,14 @@
         }
         #div1:hover{
             background-position: -113px;
-        }
+
+
     </style>
 </head>
 <body>
+<!--是bom1跳到这个页面用的-->
 zhdsndslgjesdng
+<button id="div4">返回</button>
 <div id="div1"></div>
 <script>
  var ter= document.getElementById("div1");
@@ -31,13 +34,21 @@ zhdsndslgjesdng
        // var top=document.body.scrollTop ;
        var timer=setInterval(function () {
            scrollTo(0,top*=0.6);
+           // 左右上下
            console.log(top);
            if(top<1){
                clearInterval(timer);
                scrollTo(0,0);
            }
-       },50)}
+       },50)};
 
+// 跳用的m
+       var oDiv=document.getElementById("div4");
+   oDiv.onclick=function () {
+       // window.history.back();
+       history.go(-1);
+   }
+   console.log(history.length);
 
 </script>
 </body>

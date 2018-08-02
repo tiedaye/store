@@ -6,10 +6,11 @@
 </head>
 <body>
 <p>q前面单独的p</p>
-<div id="total">
-    <p id="p1">ppppppppppp</p>
+<div id="div1" xx="sssss">
+    <!--<p id="p1">ppppppppppp</p>-->
     <p>rrrrrrr</p>
-    <h2 id="h1">hhhhhhhhhh</h2>
+    <h2>hhhhhhhhhh</h2>
+    sssssss
     <!--<input type="text" name="q1">-->
     <!--<input type="text" name="q1">-->
     <!--<input type="text" name="q1">-->
@@ -23,16 +24,38 @@
 // 得到的是数组   只有id获取的是对象  id只能在document中用
 //     console.log(rp);
 //     rp[0].style.color="green";
-//     rp[1].style.background="red"
+//     rp[1].style.background="red";
 //    var q2 = document.getElementsByName("q1");
 //     q2[0].style.color="red";
 //     q2[1].style.background="red";
+
+
     // e是一个事件  是个形参 代表单击事件   target必须用e
-var
-    console.log()
+// 其中onclick是事件
+   // 事件源是div，事件执行函数是function   事件本身
+    var div = document.getElementById("div1");
+    // div.onclick=function () {
+    //     console.log(1111);
+    // }
+// console.log(div.id)
+console.log(div.getAttribute("xx"));
+div.setAttribute("xx","div2");
+// 把id写成xx来改时不好使
+//  div.xx="div2";
 // div.onclick=function (e) {
     //     e=e|| window.event;
-    //     console.log(e.target);
+    // target 真正点击的是谁就输出谁 下面点p就输出<p>rrrrrrr<p>
+    // console.log(e.target);
+    // currenttarget 是点什么都输出事件所绑的东西的内容
+    // console.log(e.currentTarget)；
+    // this和上者一样  this是当前对象的引用 写在函数里面 函数属于谁，它就属于谁
+    // console.log(this)
+    // if(e.target.tagName =="P"){
+    //     console.log(1111);
+    // }else{
+    //     console.log(2222);
+    // }
+
     // }
 </script>
 </body>

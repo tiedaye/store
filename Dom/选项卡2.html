@@ -21,8 +21,8 @@
             width: 120px;
             height: 30px;
             text-align: center;
-            line-height: 30px;
             background: #cccccc;
+            line-height: 30px;
             margin-right: 10px;
             color: #ffffff;
         }
@@ -62,6 +62,7 @@
     for(var i = 0;i < oLi.length;i++){
         oLi[i].index=i;
         oLi[i].onclick=function () {
+            // 再一次利用循环进行清除
             for(var j=0;j < oLi.length;j++){
                 oLi[j].className="";
                 // oDiv[j].style.zIndex="1"
