@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//     var a1 = [1,2,3];
+//     var a2 = [4,5,6];
+//     console.log(a1);
+//     console.log(a2);
+//     var a3 =[ ...a1,...a2]
+//     console.log(a3);
+// console.log(...a1,...a2);
+
+// 用以前的方法拼接字符串   原来的字符串不改变
+//    var a1 = [1,2,3,[4,5,6]];
+//    var a2 = [...a1[3],7,8,9];
+//    var b = [4,5,6];
+//      console.log(a1);
+//  for(var i= 0;i<b.length;i++){
+//      a2.push(b[i])    //循环拼接
+//  }
+//  console.log(a2);
+     var a4 = [1,2,3];
+     var a5 = [4,5,6];
+     var a6 = a4.concat(a5);//返回的是数组  用push写时返回的是数组长度
+      a6[0] = 0;
+     console.log(a6)
+
+// rest
+//     var f1 =(...args)=>{
+//       console.log(args[0]);
+//     };
+//     f1([1,2,3]);
+
+    //对象
+    // var o1 = {
+    //
+    // }
+</script>
+</html>
