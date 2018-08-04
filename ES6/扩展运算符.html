@@ -25,15 +25,15 @@
 //      a2.push(b[i])    //循环拼接
 //  }
 //  console.log(a2);
-     var a4 = [1,2,3];
-     var a5 = [4,5,6];
-     var a6 = a4.concat(a5);//返回的是数组  用push写时返回的是数组长度
-      a6[0] = 0;
-     console.log(a6)
+//      var a4 = [1,2,3];
+//      var a5 = [4,5,6];
+//      var a6 = a4.concat(a5);//返回的是数组  用push写时返回的是数组长度
+//       a6[0] = 0;
+//      console.log(a6)
 
 // rest
 //     var f1 =(...args)=>{
-//       console.log(args[0]);
+//       console.log(args[0]);  //数组的数组   扩展运算符的反用
 //     };
 //     f1([1,2,3]);
 
@@ -41,5 +41,33 @@
     // var o1 = {
     //
     // }
+// var xxx = {d:4};
+// var o1 = {
+//     a:xxx,
+//     b:2
+// };
+// var o2 = {
+//     c:3
+// };
+// var obj = {
+//     ...o1,
+//     ...o2
+// };
+// // console.log(o1);
+// console.log(obj);  //这的值也改变了 不知道为什么
+// obj.a.d = 5;
+// console.log(o1);
+
+
+   var o = {
+       a:1
+   };
+   var o2 = o;
+
+   console.log(o2);
+   o2.a = 3;
+   console.log(o);
+   console.log(o2);
+   //o和o2都改变了
 </script>
 </html>
