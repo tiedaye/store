@@ -22,10 +22,11 @@
     //         })
     //     }
     // }
-    // function f1() {
-    //     console.log(arguments[3])
-    // }
-    // f1(1,3,4,6);
+      //f1定义时不定义a；调用时直接传值不好使 所以用arguments
+    function f1() {
+        console.log(arguments[2])
+    }
+    f1(1,2,3,4);
 
     // function f2() {
     //     this.name = 'lisi'
@@ -36,14 +37,14 @@
     //  };
     // var s1 = new f3()
     // console.log(s1.name);
-    var obj = {
-        name :'zs',
-        age:12,
-        say: ()=>{
-            console.log(this);
-        }
-    };
-    obj.say();
+    // var obj = {
+    //     name :'zs',
+    //     age:12,
+    //     say: ()=>{
+    //         console.log(this);
+    //     }
+    // };
+    // obj.say();
 </script>
 </body>
 </html>
