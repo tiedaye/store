@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //map可传两个参数
+    var m = new Map();
+    m.set('a',111);
+    m.set('b',222);
+    m.set(true,'aaa');
+    m.set(111,true);
+    m.set('var','true');
+    var arr = [1,3];
+    var obj = {};
+    m.set(obj,'333');
+    // m.delete(111);
+    // m.clear();
+    console.log(m);
+    // set 只传体格参数
+    var s = new Set();
+    s.add('a');
+    s.add('b');
+    s.add(true);
+    s.add(111);
+    s.add('var');
+    console.log(s)
+    // console.log(m.get(obj));
+    // console.log(m.size)
+</script>
+</html>
