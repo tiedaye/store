@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // var set = new Set();
+    // set.add('123');
+    // set.add(123);
+    // set.add(true);
+    // console.log(set);
+    // console.log(set.size);
+    // // set.clear()
+    // set.delete('123');
+    // console.log(set);
+    // var keys = set.keys();
+    // console.log(keys);
+    // console.log(set.values());
+    // var en = set.entries();
+    // for(var k of en){
+    //     console.log(k)
+    // }
+
+//输出没有重复数字的数组  最简单的方法
+    //第一种方法
+    var arr = [1,2,3,4,5,2,32,3,2,4,7];
+  var s = new Set(arr);
+  console.log(s);
+  console.log(Array.from(s));  //变成数组的类似形式
+
+
+    //第二种方法
+    var arr = [1,2,3,4,5,2,32,3,2,4,7];
+    // var obj = {};
+    var newarr = [];
+    for(var i=0;i<arr.length;i++){
+        if(newarr.indexOf(arr[i])==-1){
+            newarr.push(arr[i]);
+        }
+    }
+    console.log(newarr);
+
+
+    //第三种方法
+    var arr = [1,2,3,4,5,2,32,3,2,4,7];
+    var obj ={};
+    var newarr = [];
+    for(var i= 0;i<arr.length;i++){
+        if(!obj[arr[i]]){
+            newarr.push(arr[i]);
+            obj[arr[i]] = true;
+        }
+    }
+    console.log(newarr);
+</script>
+</html>
