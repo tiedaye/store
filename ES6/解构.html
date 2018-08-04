@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var arr = [1,2,3,null];
+    // 下面这句相当于var a，b，c，d
+    //只有上面未定义 或者时undefined时 改变数值才好使  null 和NaN 都不好使
+    // var [a,b,c,d=6] = arr;
+    // console.log(a,b,c,d);
+  //里面套数组的也同理
+    // var arr = [1,2,3,[,5]];
+    // var [a,b,c,[d,e]] = arr;
+    // console.log(a,b,c,d,e)
+
+    // 数值调换
+    // var a = 10,b = 7;
+    // a = a+b;
+    // b = a-b;
+    // a = a-b;
+    // console.log(a,b)
+    //   var [a,b] = [b,a];
+    //  console.log(a,b);
+
+    // b = [a,a=b][0];
+    // // console.log([a,a=b][1]);
+    // console.log(a,b);
+
+    var obj = {
+        a:1,
+        b:2,
+        c:{
+            xxx:5
+        }
+    };
+
+    // x,y 是变量
+    var {a:x,b:y,c:{xxx:z=4},d} =obj;
+    console.log(x,y,z,d);
+    // //只有上面未定义 或者时undefined时 改变数值才好使  null 和NaN 都不好使
+ //    function  fn([a=1,b=2]) {
+ //        console.log(a,b)
+ //    }
+ //    fn([3,NaN]);
+ // //改变数值好使  不写的时候才使用默认值
+
+    function f1({a:x=7,b:y=8}) {
+        console.log(x,y)
+    }
+    f1({a:9,b:0});
+</script>
+</body>
+</html>
