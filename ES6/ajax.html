@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<button id="div1">申请</button>
+<ul id="div2"></ul>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("#div1").click(function () {
+            $.get('a.json',function (data) {
+                var $li = $(`<li>${data.a}</li>`) //见string
+                $('#div2').append($li); //插入
+            },'json')
+
+        })
+    })
+
+</script>
+</html>
