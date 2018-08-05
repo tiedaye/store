@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var a ='xxx';
+    // var str = 'my'
+    // var obj = {
+    //     a, //对象简写
+    //     age:12,
+    //     [str + 'class']:'xxx'  //动态属性  与对象简写不能一起用
+    // };
+    // // obj[str+'class'] = 3;
+    // console.log(obj);
+    // var o = {
+    //     c:3
+    // }
+    // var obj1 = {
+    //     a:o,
+    //     b:2
+    // }
+    // console.log(Object.assign(obj1,{d:5,e:6},{f:7}));  //均会一一打开填入
+    // obj1.a.c = 8;
+    // console.log(obj1,o);
+    // console.log(-0==+0); //相等
+    console.log(-0===+0);//相等
+    console.log(NaN===NaN);//不相等
+    console.log(Object.is(-0,+0));//false
+    console.log(Object.is(NaN,NaN));//true
+
+    var arr = [1,2,3,4,6,NaN,4,5,6];
+    //封装一个函数  indexof()
+    Array.prototype.fn = function (xx){
+        for(var i=0;i<arr.length;i++){
+            if(Object.is(arr[i],xx)){
+                return i;
+            }
+        }
+        return -1
+    }
+    console.log(arr.fn(NaN));
+
+</script>
+</body>
+</html>
