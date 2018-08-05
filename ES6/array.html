@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+<script>
+
+       //  var ali = document.getElementsByTagName('li');  //类似数组 但不是数组
+       //  console.log(ali);  //集合
+       //  console.log(Array.from(ali));  //数组
+       // var arr = Array.from(ali);
+       //   arr.push('111');
+       //  console.log(arr);
+
+   //对象转化为数组
+        var obj = {
+            0:1,
+            1:2,
+            c:3,
+            length:3
+        };
+        console.log(Array.from(obj));  //充满  按下标找 length是多少 就找多少个数  不够写undefined
+
+    // var arr = [1,2,3,4,5,6,7,2,3,2];
+    // var m1 = [
+       // [1,2],
+       // [3,4],
+       // [5,[6,2]]
+       // ];
+    // var m = new Map(m1); //将二维数组转成Map样式
+    // m.set(true,'eee');
+    // console.log(m);
+    // console.log(Array.from(m)); //转回原来的样子
+
+    // var a = [1,2,3,4,5,6,7,8];
+    // console.log(a.forEach(function (xx,index) {
+    //     console.log(xx,index);
+    // }))  //无返回值所以最后输出undefined
+    // console.log(a.map(function (xx,index) {
+    //     console.log(xx,index);
+    //     if(xx>3){
+    //         return "sssss"
+    //     }else{
+    //         return xx+1;
+    //
+    //     }
+    //     //返回值是数组
+    // }))
+    // console.log(a.filter(function (xx,inde,yy) {
+    //     // if(inde>3){
+    //     //     return a;
+    //     // }
+    //     xx +=10;
+    //     return xx>5;
+    // }));//输出满足return 后面表达式的内容
+    // console.log(a)
+    // var a = new Array(3,4,1,1,1);
+    // a.fill(10,1,4);//一个三个空的数组 长度为3  fill(要替换的值，下标，下标（不算本身））
+    // console.log(a)
+    var arr = Array.of(3); //长度为1  只有3这一个元素
+    console.log(arr);
+    arr.fill(10);//替换数组中的数
+    console.log(arr);
+
+</script>
+</body>
+</html>
