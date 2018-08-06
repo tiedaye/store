@@ -1,0 +1,100 @@
+$color:#f00;
+$bg:background;
+$test:test;  //不能用类
+/*这是多行注释*/
+//这是单行注释   css中不显示
+/*！强制注释*/
+@import "commom";
+#div1{
+  background: $color;
+}
+#div2{
+  color: $color;
+}
+#div3{
+  color: $color;
+}
+#div4{
+  color: $color;
+}
+#div5{
+  color: $color;
+  a {
+    background: $color;
+    &:hover{
+      #{$bg}:$color;
+    }
+    &-test{
+      #{$bg}:$color;
+    }
+  }
+}
+##{$test}{
+  color: $color;
+}
+.div7{
+  border:{
+    left: 0;
+    top: 0;
+  };
+  background:{
+    position:center;
+    size:cover;
+    color: $color;
+  };
+}
+#div8{
+
+  width: 12px;
+  @extend #div1  //继承不好使
+}
+  @mixin xxx($color,$size){
+      width: $size;
+      height: $size;
+      background: $color;
+}
+#div9{
+  @include xxx(#000,12px);
+  a{
+    color: $color;
+  }
+}
+#div10{
+  color:lighten($color, 20%);
+  background:opacify($color, 0.3);  //颜色问题
+}
+$m:(lig:#000,dark:#fff);
+#div11{
+  color:map-get($m,lig);
+  border:map-values($m)
+}
+@for $j from 1 to 5{
+  .d1-#{$j}{
+     height: $j+px;
+}
+}
+$yy:success,fail,warnning;
+@each $xx in $yy{
+  .#{$xx}{
+    background: icon-$xx;
+  }
+}
+$i:5;
+@while $i>2{
+  .div{
+    height: 100px;
+  }
+  $i : $i - 2;
+}
+@function xx($num){
+  @if($num > 10){
+    @return $num - 10;
+  }@else if($num > 5){
+  @return $num +10;
+}@else{
+    @return $num - 5;
+  }
+}
+#div12{
+  height: xx(6) + px;
+}
