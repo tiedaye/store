@@ -10,9 +10,9 @@ body{
     height: 3000px;
 }
 #head{
-    width: 1500px;
+    width: 1550px;
     height: 700px;
-    background: url("web-image/banner2.jpg") no-repeat 0 0 fixed ;
+    background: url("web-image/banner2.jpg") no-repeat center center fixed ;
     background-size: cover;
     overflow: hidden;
 }
@@ -63,37 +63,42 @@ body{
 }
 #container{
     width: 800px;
-    height: 800px;
+    height: 500px;
     margin: 50px auto;
     position: relative;
+}
+#container .smallcir{
+    position:absolute;
+    bottom: 20px;
+    left:300px;
+    z-index: 9999;
 }
 #container li{
     border: 1px solid transparent;
     background: #f1f1f1;
-    width: 100px;
-    height: 100px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
-    list-style: none;
-    text-align: center;
-    line-height: 100px;
-    color: #f1f1f1;
-    font-weight: bold;
-    float: left;
-    margin-left: 90px;
+    float:left;
+    z-index: 9999;
+    margin-right: 20px;
 }
 #container li.selected{
-    font-weight: bold;
-    color: deeppink;
+    background:#3ec8f7;
+}
+#container li:hover{
+    background:purple;
 }
 #container div{
-    position: absolute;
-    top:130px;
-    left:90px
+    /*position: absolute;*/
+    /*top:130px;*/
+    /*left:90px*/
+    margin: 20px auto;
 }
 #container img {
     position: absolute;
     width: 700px;
     height: 500px;
-    /*clear: both;*/
     border-radius: 10%;
+    float: left;
 }
