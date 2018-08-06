@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/*这是多行注释*/
+/*！强制注释*/
+* {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+#div1, #div8 {
+  background: #f00; }
+
+#div2 {
+  color: #f00; }
+
+#div3 {
+  color: #f00; }
+
+#div4 {
+  color: #f00; }
+
+#div5 {
+  color: #f00; }
+  #div5 a {
+    background: #f00; }
+    #div5 a:hover {
+      background: #f00; }
+    #div5 a-test {
+      background: #f00; }
+
+#test {
+  color: #f00; }
+
+.div7 {
+  border-left: 0;
+  border-top: 0;
+  background-position: center;
+  background-size: cover;
+  background-color: #f00; }
+
+#div8 {
+  width: 12px; }
+
+#div9 {
+  width: 12px;
+  height: 12px;
+  background: #000; }
+  #div9 a {
+    color: #f00; }
+
+#div10 {
+  color: #ff6666;
+  background: red; }
+
+#div11 {
+  color: #000;
+  border: #000, #fff; }
+
+.d1-1 {
+  height: 1px; }
+
+.d1-2 {
+  height: 2px; }
+
+.d1-3 {
+  height: 3px; }
+
+.d1-4 {
+  height: 4px; }
+
+.success {
+  background: icon- success; }
+
+.fail {
+  background: icon- fail; }
+
+.warnning {
+  background: icon- warnning; }
+
+.div {
+  height: 100px; }
+
+.div {
+  height: 100px; }
+
+#div12 {
+  height: 16px; }
+
+/*# sourceMappingURL=index.css.map */
