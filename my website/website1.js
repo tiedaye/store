@@ -4,13 +4,18 @@ var ali = ocontainer.getElementsByTagName('li')
 var zIndex = 4;
 var nowindex =0;
 setInterval(function () {
-    if(nowindex ==aimg.length - 1){
-        nowindex = 0;
-    }
+
     aimg[nowindex].style.zIndex = ++zIndex;
     aimg[nowindex].style.opacity = 0;
-    animate(aimg[nowindex], {opacity: 100})
-    ali[nowindex].className = 'selected';
-    aimg[nowindex].className = 'selected';
+    animate(aimg[nowindex], {opacity: 100});
+    for(var j=0;j<ali.length;j++){
+        ali[j].style.background = ""
+    }
+    ali[nowindex].style.background = "hotpink";
     nowindex++;
+    if(nowindex ==ali.length){
+        nowindex = 0;
+
+    }
+
 },1000);
