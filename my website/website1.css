@@ -70,7 +70,7 @@ body{
 #container .smallcir{
     position:absolute;
     bottom: 20px;
-    left:300px;
+    left:288px;
     z-index: 9999;
 }
 #container li{
@@ -83,9 +83,9 @@ body{
     z-index: 9999;
     margin-right: 20px;
 }
-#container li.selected{
-    background:#3ec8f7;
-}
+/*#container li.selected{*/
+    /*background:hotpink;*/
+/*}*/
 #container li:hover{
     background:purple;
 }
@@ -101,4 +101,17 @@ body{
     height: 500px;
     border-radius: 10%;
     float: left;
+}
+#information p{
+    font-size: 40px;
+    width: 200px;
+    margin: 50px auto;
+}
+#information .icon li svg{
+    font-size: 16px;
+}
+#information .icon{
+    width: 500px;
+    height: 500px;
+    /*margin: 50px auto;*/
 }
