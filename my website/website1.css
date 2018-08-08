@@ -12,7 +12,8 @@ body{
 #head{
     width: 1550px;
     height: 700px;
-    background: url("web-image/banner2.jpg") no-repeat center center fixed ;
+    /*background: url("web-image/banner2.jpg") no-repeat center center fixed ;*/
+    background: #fde2e7 center center fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -62,15 +63,15 @@ body{
     padding-left: 15px;
 }
 #container{
-    width: 800px;
+    width: 1300px;
     height: 500px;
-    margin: 50px auto;
+    margin: 10px 60px;
     position: relative;
 }
 #container .smallcir{
     position:absolute;
-    bottom: 20px;
-    left:288px;
+    bottom: 60px;
+    left:180px;
     z-index: 9999;
 }
 #container li{
@@ -81,7 +82,7 @@ body{
     border-radius: 50%;
     float:left;
     z-index: 9999;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 /*#container li.selected{*/
     /*background:hotpink;*/
@@ -89,29 +90,36 @@ body{
 #container li:hover{
     background:purple;
 }
-#container div{
-    /*position: absolute;*/
-    /*top:130px;*/
-    /*left:90px*/
-    margin: 20px auto;
+#container .con-left{
+    margin: 0 auto;
+}
+#container .con-right{
+    width: 500px;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 #container img {
     position: absolute;
-    width: 700px;
-    height: 500px;
+    width: 470px;
+    height: 450px;
     border-radius: 10%;
     float: left;
 }
 #information p{
     font-size: 40px;
-    width: 200px;
-    margin: 50px auto;
+    color: #ffd3be;
 }
-#information .icon li svg{
-    font-size: 16px;
+#information .iconfont{
+    width: 1500px;
+    overflow: hidden;
+    margin: 0 100px;
+ }
+#information .iconfont li,p{
+    margin: 50px 50px;
+    float: left;
 }
-#information .icon{
-    width: 500px;
-    height: 500px;
-    /*margin: 50px auto;*/
+#information .iconfont .icon{
+    font-size: 70px;
 }
