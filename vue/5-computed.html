@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+ {{firstname}} + {{lastname}} = {{fullname}}
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            firstname:'zhang',
+            lastname:'san'
+        },
+        computed:{
+            // fullname 本身就改不了  只有经过firstname和lastname来改
+            fullname:{
+                set:function(val) {
+                      var arr = val.split(' ');
+                      this.firstname = arr[0];
+                      this.lastname = arr[1];
+                },
+                get:function(){
+                    return this.firstname +' '+ this.lastname;
+                }
+            }
+
+        }
+    })
+</script>
+</body>
+</html>
