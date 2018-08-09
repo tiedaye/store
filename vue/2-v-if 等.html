@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="hello" >
+    <!--<p v-if="xx == 'A'">-->
+        <!--pppppppp-->
+    <!--</p>-->
+    <!--<h4 v-else-if="xx == 'B'">-->
+        <!--h4h4h4h4-->
+    <!--</h4>-->
+    <!--<span v-else>-->
+        <!--spansapnsapn-->
+    <!--</span>-->
+    <!--<div v-show="msg">-->
+        <!--<p >pppppppp</p>-->
+        <!--<h4>h4h4h4h4</h4>-->
+        <!--<span>spansapnsapn</span>-->
+    <!--</div>-->
+    <!--<template v-if="msg">-->
+        <!--<p >pppppppp</p>-->
+        <!--<h4>h4h4h4h4</h4>-->
+        <!--<span>spansapnsapn</span>-->
+    <!--</template>-->
+    <div>
+        <p v-if="msg">
+            dddddd
+        </p>
+        <span v-else>
+            ffffff
+        </span>
+    </div>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#hello',
+        data:{
+            msg:false,
+            xx:'A'
+        }
+    });
+</script>
+</body>
+</html>
