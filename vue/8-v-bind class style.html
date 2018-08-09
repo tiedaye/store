@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .font{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<!--:是v-bind的简写-->
+<!--<div id="app" :titel="xx">-->
+<!--</div>-->
+<div id="app">
+    <button @click="add">显示与隐藏</button>
+    <div id="div1" :class="{red:isRed,font:isFont}">dddddd</div>
+    <!--<div id="div1" :class="classObj">dddddd</div>-->
+    <!--<div id="div1" :class="[classA,classB]">dddddd</div>-->
+
+    <!--<div id="div1" :style="{background:'red','font-size':'40px'}">dddddd</div>-->
+    <!--<div id="div1" :style="{background:styleA,'font-size':styleB}">dddddd</div>-->
+    <!--<div id="div1" :style="styleObj">dddddd</div>-->
+    <!--<div id="div1" :style="[styleC,styleD]">dddddd</div>-->
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            xx:'qqq',
+            isRed:true,
+            isFont:true,
+            classObj:{
+                red:true,
+                font:true
+            },
+            classA:'red',
+            classB:'font',
+
+            styleA:'red',
+            styleB: '40px',
+
+            styleObj:{
+                background:'red',
+                'font-size':'40px'
+            },
+            styleC:{
+                background:'red'
+            },
+            styleD:{
+                'font-size':'40px'
+            }
+        },
+        methods:{
+            add(){
+                this.isFont = !this.isFont;
+            }
+        }
+    })
+</script>
+</body>
+</html>
