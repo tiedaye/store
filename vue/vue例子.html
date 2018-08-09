@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .dis{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="val" @keyup="select">
+    <button @click="click">add</button>
+    <ul>
+        <li v-for="val in newarr" @click="turn" :class="{dis:play}">
+            {{val}}
+        </li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+           val:'',
+            arr:[],
+            play:false
+        },
+        methods: {
+            click() {
+                if (this.val != '') {
+                    this.arr.push(this.val);
+                    this.val = '';
+                }
+            },
+            turn() {
+                if(!event.target.className){
+                    event.target.className = 'red';
+                }else{
+                    event.target.className = '';
+                }
+
+            },
+            select() {
+                for(var i=0;i<this.arr.length;i++){
+                    if (this.arr[i].indexOf(this.val)){
+                        console.log(1111);
+                        this.play = true;
+                    }
+                }
+
+            }
+        },
+            computed:{
+                newarr(){
+                    return this.arr.sort();
+                }
+            }
+    })
+</script>
+</body>
+</html>
