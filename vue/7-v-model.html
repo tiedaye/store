@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--enter或者直接写13  但是不好记-->
+    <input type="text" @keyup.enter="add" v-model="val">
+    {{msg}}
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:0,
+            val:''
+        },
+        methods:{
+            add(){
+                // if(event.keyCode==13){
+                    console.log(33333);
+                    // this.msg += parseInt(this.val);  //或者写Number(this.val)
+                this.msg += this.val * 1;  //或者这么写
+                // }
+            }
+        }
+    })
+</script>
+</body>
+</html>
