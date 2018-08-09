@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: #f00;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--传$event,不传也可以  直接写event-->
+    <!--<button @click="fun(1,$event)">click</button>-->
+    <!--{{msg}}-->
+    <div id="div1" @click="click1">
+        <div id="div2" @click.stop="click2">
+
+        </div>
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm  = new Vue({
+        el:"#app",
+        data:{
+            msg:0
+        },
+        methods:{
+           // fun(a,e){
+           //     this.msg +=a;
+           //     console.log(e)  //或者前面什么都不传 这只写event  也可以引入
+           // },
+            click1(){
+                console.log(11111);
+
+            },
+            click2(){
+                console.log(22222);
+                // event.stopPropagation();
+            }
+        }
+    })
+</script>
+</body>
+</html>
