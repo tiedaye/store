@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+      <!--纯数组-->
+    <!--<li v-for="(val,index) in arr">-->
+        <!--{{val}},{{index}}-->
+    <!--</li>-->
+    <!--//简单循环-->
+    <!--<li v-for="i in 4">-->
+        <!--{{i}}-->
+    <!--</li>-->
+    <!--//对象数组-->
+    <li v-for="(val,index) in stulist">
+       {{ '学生姓名：'+val.name}}，学生年龄：{{val.age}},{{index}}
+    </li>
+    <!--//对象-->
+    <!--<li v-for="(val,keys,index) in obj">-->
+        <!--{{val}},{{keys}},{{index}}-->
+    <!--</li>-->
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            arr:[111,222,333,444,555],
+            student:[{
+                name:'zhang',
+                age:13
+            },{
+                name:'wangwu',
+                age:12
+            }, {
+                  name:'zhaoliu',
+                age:14
+                }
+            ],
+            obj:{
+                a:'aaaaa',
+                b:22,
+                c:33
+            }
+        },
+        computed:{
+             stulist(){
+                return this.student.sort(function(a,b){
+                    return a.age - b.age;
+                })
+            }
+        }
+    });
+    console.log(vm.student);  //不会修改原数组
+</script>
+</body>
+</html>
