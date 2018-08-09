@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [{age:60},{age:49},{age:75},{age:36}];
+    var arr2 = [4,5,6,2,32,8];
+    // var arr1 = arr.sort(function (a,b) {
+    //     return a.age - b.age;
+    // });
+    arr.sort(function (a,b) {
+        return a.age - b.age;
+    });
+    // arr2.sort();
+    arr2.sort(function (a,b) {
+        return Math.random() - 0.5;
+    });
+    // console.log(arr1); //修改原数组
+    console.log(arr);
+    console.log(arr2)  //以字符串的形式比较
+</script>
+</body>
+</html>
