@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #app{
+            width: 350px;
+            margin: 10px auto;
+            position:relative ;
+            height: 400px;
+       }
+        li{
+            height: 50px;
+            list-style: none;
+            background: #00ff00;
+            line-height: 50px;
+            margin-bottom: 10px;
+            padding: 0 20px;
+        }
+
+        span{
+            float:right;
+        }
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>Services</h1>
+    <ul>
+        <li v-for="val in objects" @click="turn(val)" :class="{red:val.style}" >
+            {{val.name}}<span class>{{val.age}}</span>
+        </li>
+        <!--<li v-for="val in objects" @click="val.style = !val.style":class="{red:val.style}" >-->
+            <!--{{val.name}}<span class>{{val.age}}</span>-->
+        <!--</li>-->
+        <!--<li v-for="(val,index) in objects" @click="turn(index)" :class="{red:val.style}" >-->
+            <!--{{val.name}}<span class>{{val.age}}</span>-->
+        <!--</li>-->
+        </ul>
+            <hr>
+            total:
+           <span>{{msg}}</span>
+           <!--//调用方法中的属性-->
+            <!--<span>{{total()}}</span> -->
+           <span>{{total}}</span>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data: {
+            msg:0,
+            objects:[{
+                name:'aaa',
+                age:234,
+                style:false
+            },{
+                name:'bbb',
+                age:927,
+                style:false
+            }, {
+                name:'ccc',
+                age:247,
+                style:false
+            },{
+                name:'ddd',
+                age:316,
+                style:false
+            },{
+                name:'eee',
+                age:532,
+                style:false
+            }
+            ]
+        },
+        methods:{
+            turn:function(xx){
+                    xx.style = !xx.style;
+                    // if(xx.style){
+                    //     this.msg +=xx.age;
+                    // }else{
+                    //     this.msg -=xx.age;
+                    // }
+
+            },
+            // total(){
+            //     //定义在方法中的属性
+            //     let sum = 0;
+            //     this.objects.forEach(function (elem,index) {
+            //         if(elem.style){
+            //             sum +=elem.age;
+            //         }
+            //     });
+            //     return sum;
+            // },
+            // 或者在点击的时候直接传style的状态
+            // turn(i){
+            //     this.objects[i].style = !this.objects[i].style;
+            // }
+        },
+        computed:{
+            total(){
+                //定义在方法中的属性
+                let sum = 0;
+                this.objects.forEach(function (elem) {
+                    if(elem.style){
+                        sum +=elem.age;
+                    }
+                });
+                return sum;
+            }
+    }
+    })
+
+</script>
+</body>
+</html>
