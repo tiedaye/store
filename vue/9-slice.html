@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+<div v-for="val in arr">
+ {{val}}
+</div>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#div1",
+        data:{
+            arr:[1,2,3,4,8,9,0,9,8]
+        }
+    })
+</script>
+</body>
+</html>
