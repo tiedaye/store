@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <demo1 ab-cd="123" :yy="m1" :zz="m3">
+        <p slot="p1">我是name为p1</p>
+        <p slot="p2">我是name为p2</p>
+        <p>我是占位的</p>
+    </demo1>
+    <demo1 ab-cd="456" :yy="m2" :zz="m3"></demo1>
+</div>
+<!--<div id="app1">-->
+   <!--<demo1></demo1>-->
+<!--</div>-->
+<script src="vue.js"></script>
+<script type="text/x-template" id="temp">
+  <div>
+    {{AbCd}}
+      <h5>{{yy}}</h5>
+      <slot name="p1">
+          <p>我是默认的例子</p>
+      </slot>
+      <div>{{zz}}</div>
+      <slot name=p2>
+          <p>默认例子</p>
+      </slot>
+      <slot>
+
+      </slot>
+  </div>
+</script>
+<script>
+    //全局组件   用的少
+    // Vue.component("demo1",{
+    //     template:"<div>2222<h5>h5h5h5h5</h5></div>"
+    // });
+    //局部组件
+    new Vue({
+        el:"#app",
+        data:{
+            m1:'hahaha',
+            m2:"hehehe",
+            m3:'divdiv'
+        },
+        components:{
+            demo1:{
+                // template:"<div>{{AbCd}}<h4>{{yy}}</h4></div>",
+                template:"#temp",
+                props:["AbCd","yy","zz"]
+
+            }
+        }
+    });
+    // new Vue({
+    //     el:"#app1",
+    //     data:{
+    //
+    //     },
+    //     components:{
+    //         // demo1:{
+    //         //     template:"<div>1111<h4>h4h4h4h4</h4></div>"
+    //         // }
+    //     }
+    // })
+</script>
+</body>
+</html>
