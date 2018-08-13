@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mydialog{
+            width: 400px;
+            margin: 100px auto;
+        }
+        #mydialog .title{
+            height: 40px;
+            line-height: 40px;
+            background: deeppink;
+        }
+        #mydialog .title .console{
+            float: right;
+            margin-right: 10px;
+        }
+        #mydialog .foot{
+            height: 300px;
+            background: wheat;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="login">登陆</button>
+    <button @click="reg">注册</button>
+    <my-dialog head="登陆" v-show="show1" @fclose="close">
+        用户名：<input type="text">
+        <br>
+        密码是：<input type="password">
+        <br>
+        <input type="submit">
+    </my-dialog>
+    <my-dialog head="注册" v-show="show2" @fclose="close">
+        用户名：<input type="text">
+        <br>
+        密码是：<input type="password">
+        <br>
+        邮箱是：<input type="text">
+        <br>
+        <input type="submit">
+        <input type="reset">
+    </my-dialog>
+</div>
+<script src="vue.js"></script>
+<script type="text/x-template" id="temp">
+    <div id="mydialog">
+        <div class="title">
+                <span class="login">{{head}}</span>
+                <span class="console" @click="$emit('fclose')">[X]</span>
+        </div>
+        <div class="foot">
+            <slot>
+                用户名：<input type="text">
+                <br>
+                密码是：<input type="password">
+            </slot>
+        </div>
+
+    </div>
+</script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            head:'',
+            show1:false,
+            show2:false
+        },
+        components:{
+            "my-dialog":{
+                template:"#temp",
+                props:['head']
+            }
+        },
+        methods:{
+            login(){
+                this.show1 = true;
+                this.show2 = false;
+            },
+            reg(){
+                this.show2 = true;
+                this.show1 = false;
+            },
+            close(){
+                // console.log(11111)
+                this.show1 = false;
+                this.show2 = false;
+            }
+        }
+    })
+</script>
+</body>
+</html>
