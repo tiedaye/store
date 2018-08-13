@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dialog{
+            width: 400px;
+            margin: 100px auto;
+        }
+        #head{
+            height: 40px;
+            background: hotpink;
+            line-height: 40px;
+        }
+        #head .console{
+            float: right;
+        }
+        #foot{
+            height: 300px;
+            padding-top: 50px;
+            background: #795da3;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <button @click="click1">登陆</button>
+    <button @click="click2">注册</button>
+    <mydialog title="登陆" v-show="show1" @close="close">
+            用户名：<input type="text">
+            <br>
+            密码是：<input type="password">
+            <br>
+            邮箱是：<input type="text">
+            <input type="submit">
+            <input type="reset">
+    </mydialog>
+    <mydialog title="注册" v-show="show2" @close="close">
+            用户名：<input type="text">
+            <br>
+            密码是：<input type="password">
+            <br>
+            <input type="submit">
+    </mydialog>
+</div>
+<script src="vue.js"></script>
+<script type="text/x-template" id="temp">
+    <div id="dialog">
+        <div id="head">
+            <span>{{title}}</span>
+            <span class="console" @click="$emit('close')">[X]</span>
+        </div>
+
+        <div id="foot">
+        <slot>
+            用户名：<input type="text">
+            <br>
+            密码是：<input type="password">
+        </slot>
+    </div>
+    </div>
+</script>
+<script>
+   new Vue({
+       el:"#container",
+       data:{
+           title:'',
+           show1:false,
+           show2:false,
+       },
+       components:{
+           mydialog:{
+               template:"#temp",
+               props:['title']
+           }
+       },
+       methods:{
+           click1(){
+               this.show1 = true;
+               this.show2=false;
+           },
+           click2(){
+               this.show2 = true;
+               this.show1=false;
+           },
+           close(){
+               this.show2 = false;
+               this.show1=false;
+           }
+       }
+   })
+</script>
+</body>
+</html>
