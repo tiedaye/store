@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="cart">
+    <button>添加商品</button>
+    <table id="tbl">
+        <thead>
+        <tr>
+            <th></th>
+            <th>商品图片</th>
+            <th>商品信息</th>
+            <th>赠送</th>
+            <th>商品金额</th>
+            <th>商品数量</th>
+            <th>总金额</th>
+            <th>编辑</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(p,index) in p_List">
+            <td><input type="checkbox" v-model="arr" :value="p"></td>
+            <td><img src="" alt="" width="100"></td>
+            <td>{{p.productName}}</td>
+            <td>
+                <ul>
+                    <li v-for="part in p.parts">{{part.partsName}}</li>
+                </ul>
+            </td>
+            <td>{{p.productPrice}}</td>
+            <td>
+                <button @click="reduce(p)">-</button>
+                <input type="text" @blur="filter(p)" v-model="p.productQuentity">
+                <button @click="add(p)">+</button>
+            </td>
+            <td>{{p.productQuentity * p.productPrice}}</td>
+            <td><a href="javascript:;" @click="del(p,index)">删除</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td></td>
+            <td>
+                总计：<span>{{total}}</span></td>
+            <td>
+                <button>结账</button>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<script src="../vue.js"></script>
+<script src="axios.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#cart',
+        data:{
+            p_List:[],
+            arr:[]
+        },
+        methods:{
+            add(xx){
+                xx.productQuentity++;
+            },
+            reduce(xx){
+                if(xx.productQuentity>0){
+                    xx.productQuentity--;
+                }
+            },
+            filter(p){
+                if(p.productQuentity<0){
+                    p.productQuentity = 0;
+                }
+            },
+            // total(){
+            //     var sum = 0;
+            //     this.arr.forEach(function (elem) {
+            //         sum +=elem.productQuentity * elem.productPrice;
+            //     });
+            //     return sum;
+            // }
+            del(p,i){
+                this.p_List.splice(i,1);
+                this.arr.splice(this.arr.indexOf(p),1);
+            }
+        },
+        computed:{
+            total(){
+                var sum = 0;
+                this.arr.forEach(function (elem) {
+                    sum +=elem.productQuentity * elem.productPrice;
+                });
+                return sum;
+            }
+        },
+        created(){
+            axios.get('cart.json').then((res)=> {
+               this.p_List = res.data.result.productList;
+            })
+        }
+    })
+</script>
+</body>
+</html>
