@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+   <button @click="count++">add</button>
+    {{count}}
+    <input type="text" id="ipt">
+    <button @click="del">del</button>
+</div>
+<script src="vue.js"></script>
+<script>
+    // var timer;  这种情况清不了计时器  不加这句话可以清  或者用this.timer
+    new Vue({
+        el:"#app",
+        data:{
+            count:0,
+            timer:null
+        },
+        methods:{
+            del(){
+                    this.$destroy();
+            }
+        },
+        beforeCreate(){
+            console.log('beforeCreate')
+        },
+        created(){
+            console.log('created');
+            this.timer = setInterval(()=>{
+                console.log(11111);
+            },1000)
+        },
+        beforeMount(){
+            console.log('beforeMount')
+        },
+        mounted(){
+            console.log('mounted');
+            document.getElementById('ipt').focus();
+
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate')
+        },
+        updated(){
+            console.log('updated')
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy');
+        },
+        destroyed(){
+            console.log('destroyed');
+            clearInterval(this.timer);
+        }
+
+
+    })
+</script>
+</body>
+</html>
