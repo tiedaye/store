@@ -2,4 +2,24 @@
     width: 200px;
     height: 200px;
     background: url(../image/气球.jpg);
+    transform: rotate(30deg);
+}
+#div2{
+    width: 200px;
+    height: 200px;
+    background: #0086b3;
+}
+@keyframes hhh {
+
+}
+@media all {
+
+}
+#div4{
+
+}
+.container{
+    background: #0086b3;
+}
+#font{
 }
