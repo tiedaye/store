@@ -3,6 +3,8 @@
         <swipe-item class="slide1"></swipe-item>
         <swipe-item class="slide2"></swipe-item>
         <swipe-item class="slide3"></swipe-item>
+        <swipe-item class="slide4"></swipe-item>
+        <swipe-item class="slide5"></swipe-item>
     </swipe>
 </template>
 
@@ -39,6 +41,16 @@
 
     .slide3 {
         background: url("http://localhost:8080/img/小奶熊.png") center no-repeat;
+        background-size: contain;
+        color: #fff;
+    }
+    .slide4{
+        background: url("http://localhost:8080/img/城市小路.jpg") center no-repeat;
+        background-size: contain;
+        color: #fff;
+    }
+    .slide5 {
+        background: url("http://localhost:8080/img/气球.jpg") center no-repeat;
         background-size: contain;
         color: #fff;
     }
