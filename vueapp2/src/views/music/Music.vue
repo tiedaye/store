@@ -1,6 +1,6 @@
 <template>
     <div>
-        <aplayer autoplay listMaxHeight='50' showLrc="true" theme="pink" :music="musicList[0]" :list="musicList" v-if="isShow">
+        <aplayer autoplay listMaxHeight='50' :showLrc=true theme="pink" :music="musicList[0]" :list="musicList" v-if="isShow">
 
         </aplayer>
     </div>
@@ -29,7 +29,7 @@
                     data.artist = elem.author;
                     data.src = elem.src;
                     data.pic = elem.musicImgSrc;
-                    data.lrc = '/public/'+elem.lrc;
+                    data.lrc = 'http://localhost:8080/'+elem.lrc;
                     this.musicList.push(data);
                 });
                 this.isShow = true;
