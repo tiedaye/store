@@ -42,7 +42,7 @@
         },
         methods:{
             detail(movieobj){
-                console.log(1111)
+                console.log(1111);
                 this.$router.push('/moviedetail/'+ movieobj.id);
             },
             getData(){
