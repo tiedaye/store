@@ -24,8 +24,9 @@
             Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/subject/'+movieId).then(res=>{
                 this.MovieDetail = res.data;
                 this.show = true;
+                console.log(this.MovieDetail);
             });
-            console.log(this.MovieDetail);
+
         }
     }
 </script>
