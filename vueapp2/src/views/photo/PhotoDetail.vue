@@ -1,8 +1,11 @@
 <template>
-    <v-touch class="photo" :style="{'background-image':'url('+photoList[index].src+')'}"
-    @swipeleft="left" @swiperight="right">
+    <router-link to="/photo">
+        <v-touch class="photo" :style="{'background-image':'url('+photoList[index].src+')'}"
+                 @swipeleft="left" @swiperight="right">
 
-    </v-touch>
+        </v-touch>
+    </router-link>
+
 </template>
 
 <script>
