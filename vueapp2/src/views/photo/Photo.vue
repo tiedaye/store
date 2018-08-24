@@ -1,9 +1,8 @@
 <template>
     <div>
-        <router-link v-for="(val,index) in photoList" :to="'/photodetail/' + index">
-            <img  :src="val.src" alt="">
+        <router-link v-for="(val,index) in photoList" :to="'/photodetail/'+ index">
+            <img :src="val.src" alt="">
         </router-link>
-
     </div>
 </template>
 
@@ -19,6 +18,7 @@
         created(){
             Axios.get('data/photodata.json').then(res=>{
                 this.photoList = res.data.photoData;
+                this.$store.dispatch('setPhoto',this.photoList);
             })
 
         }
