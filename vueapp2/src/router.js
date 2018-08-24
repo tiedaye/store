@@ -32,7 +32,7 @@ import PhotoDetail from './views/photo/PhotoDetail.vue';
             component: MovieDetail,
         },
         {
-            path: '/photodetail',
+            path: '/photodetail/:index',
             component: PhotoDetail,
         }
     ],
