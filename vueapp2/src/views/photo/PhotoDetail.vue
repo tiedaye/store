@@ -1,19 +1,47 @@
 <template>
-    <div class="photo">
+    <v-touch class="photo" :style="{'background-image':'url('+photoList[index].src+')'}"
+    @swipeleft="left" @swiperight="right">
 
-    </div>
+    </v-touch>
 </template>
 
 <script>
-
+    import { mapState } from  'vuex';
     export default {
-        name: "PhotoDetail"
+        name: "PhotoDetail",
+        data(){
+            return{
+                index:this.$route.params.index
+            }
+        },
+        // created(){
+        //     console.log(this.$route.params.index);
+        // }
+        computed:mapState(['photoList']),
+        methods:{
+            left(){
+                if(this.index==this.photoList.length - 1){
+                    this.index = 0;
+                }else{
+                    this.index++;
+                }
+
+                // console.log(this.photoList.length)
+            },
+            right(){
+                if(this.index==0){
+                    this.index = this.photoList.length -1;
+                }else{
+                    this.index--;
+                }
+            }
+    }
     }
 </script>
 
 <style scoped>
     .photo{
-        background-image: url('/img/1.jpg');
+        /*background-image: url('/img/1.jpg');*/
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
