@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    width: 1500px;
+    height: 3000px;
+}
+#head{
+    width: 1550px;
+    height: 700px;
+    /*background: url("web-image/banner2.jpg") no-repeat center center fixed ;*/
+    /*background: #fde2e7 center center fixed;*/
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(pink), to(#fde2e7));;
+    background-size: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+#header{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+
+}
+#menu .title{
+    width: 1500px;
+    height: 200px;
+    margin: 5px 200px;
+}
+#menu .title .trangle{
+    background: rgba(250,250,250,.5);
+    width: 80px;
+    height: 50px;
+    border-radius: 30%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px 100px;
+    transform: rotateX(-85deg);
+}
+#menu .title .trangle:hover{
+    transform-origin: 70px 32px;
+    transform-style: preserve-3d;
+    animation: yyy 1s linear infinite;
+}
+@keyframes yyy {
+    from{
+
+    }
+    to{
+        transform: rotateX(270deg);
+    }
+}
+#header img{
+    width: 100%;
+    height: 95%;
+    border-radius: 50%;
+}
+#header h3{
+    font-size: 40px;
+    color: #589fb5;
+    padding-left: 15px;
+}
+#aboutMe p{
+     font-size: 40px;
+     color: #ffd3be;
+ }
+#aboutMe .iconfont{
+    width: 1500px;
+    overflow: hidden;
+    margin: 0 100px;
+}
+#aboutMe .iconfont li,p{
+    margin: 50px 50px;
+    float: left;
+}
+#aboutMe .iconfont .icon{
+    font-size: 70px;
+}
+#container{
+    width: 1300px;
+    height: 500px;
+    margin: 10px 60px;
+    position: relative;
+}
+#container .smallcir{
+    position:absolute;
+    bottom: 60px;
+    left:180px;
+    z-index: 9999;
+}
+#container li{
+    border: 1px solid transparent;
+    background: #f1f1f1;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    float:left;
+    z-index: 9999;
+    margin-right: 10px;
+}
+/*#container li.selected{*/
+    /*background:hotpink;*/
+/*}*/
+#container li:hover{
+    background:purple;
+}
+#container .con-left{
+    margin: 0 auto;
+}
+#container .con-right{
+    width: 500px;
+    height: 400px;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+#container img{
+    position: absolute;
+    width: 470px;
+    height: 450px;
+    border-radius: 10%;
+    float: left;
+}
+#information .infor-font{
+    width:550px;
+    height: 450px;
+    margin-left: 80px;
+    font-size: 30px;
+    float: left;
+    padding: 40px 30px;
+    background:#f3e3c6;
+}
+#information .infor-img img{
+    width:100px;
+    height:100px;
+}
+#information .infor-img{
+    float: right;
+    margin-right: 200px;
+}

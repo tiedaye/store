@@ -1,0 +1,35 @@
+#total {
+    width: 1500px;
+    height: 800px;
+    background: #0086b3;
+    float: left;
+}
+
+/*#total .total-top{*/
+/*overflow: hidden;*/
+/*}*/
+#total .total-topright {
+    /*border: 1px solid transparent;*/
+    width: 800px;
+    height: 50px;
+    background: #ffffff;
+    /*margin: 10px auto;*/
+    border-radius: 15%;
+    display: none;
+    float: left;
+    /*clear: both;*/
+}
+
+#total .total-topleft{
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+#total .total-topleft img{
+    margin: 10px 10px;
+    width: 50px;
+    height: 50px;
+}
+#total .total-top:hover .total-topright{
+    display: block;
+}
