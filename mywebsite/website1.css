@@ -12,9 +12,8 @@ body{
 #head{
     width: 1550px;
     height: 700px;
-    /*background: url("web-image/banner2.jpg") no-repeat center center fixed ;*/
-    /*background: #fde2e7 center center fixed;*/
-    background: -webkit-gradient(linear, 0 0, 0 bottom, from(pink), to(#fde2e7));;
+    /*background: url("web-image/banner2.jpg") center center fixed;*/
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(pink), to(#fde2e7))center center fixed;
     background-size: cover;
     overflow: hidden;
     z-index: -1;
@@ -64,6 +63,26 @@ body{
     color: #589fb5;
     padding-left: 15px;
 }
+#middle .infor-img2{
+    position: relative;
+}
+#middle .infor-img2 img{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: -45px;
+    left: 350px;
+}
+#middle .infor-img{
+    position: relative;
+}
+#middle .infor-img img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -40px;
+    left: 1000px;
+}
 #aboutMe p{
      font-size: 40px;
      color: #ffd3be;
@@ -81,65 +100,65 @@ body{
     font-size: 70px;
 }
 #container{
-    width: 1300px;
-    height: 500px;
-    margin: 10px 60px;
+    width: 800px;
+    height: 300px;
+    margin: 100px auto;
+    border: 1px solid #000000;
     position: relative;
+    overflow: hidden;
 }
-#container .smallcir{
-    position:absolute;
-    bottom: 60px;
-    left:180px;
-    z-index: 9999;
+#container #num{
+    width:1600px ;
+    position: absolute;
+    left:0;
 }
-#container li{
-    border: 1px solid transparent;
-    background: #f1f1f1;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    float:left;
-    z-index: 9999;
+#container #num li img{
+    width:200px;
+    height: 180px;
+}
+#container #num li{
+    float: left;
+
+}
+#container #font{
+    margin: 230px 320px;
+}
+#container #font li{
+    width: 70px;
+    height: 50px;
+    background: #cccccc;
+    font-size: 16px;
+    color: #ffffff;
+    float: left;
+    text-align: center;
+    line-height: 50px;
     margin-right: 10px;
 }
-/*#container li.selected{*/
-    /*background:hotpink;*/
-/*}*/
-#container li:hover{
-    background:purple;
-}
-#container .con-left{
-    margin: 0 auto;
-}
-#container .con-right{
-    width: 500px;
-    height: 400px;
-    font-size: 30px;
-    position: absolute;
-    top: 0;
-    right: 30px;
-}
-#container img{
-    position: absolute;
-    width: 470px;
-    height: 450px;
-    border-radius: 10%;
-    float: left;
+#information{
+    /*background: ;*/
 }
 #information .infor-font{
-    width:550px;
+    width:650px;
     height: 450px;
-    margin-left: 80px;
-    font-size: 30px;
-    float: left;
-    padding: 40px 30px;
-    background:#f3e3c6;
-}
-#information .infor-img img{
-    width:100px;
-    height:100px;
-}
-#information .infor-img{
     float: right;
-    margin-right: 200px;
+    margin-right: 80px;
+    line-height: 30px;
+    font-weight: lighter;
+    /*background:#f3e3c6;*/
+}
+#information .infor-font p{
+    margin: 0 0;
+    width: 650px;
+    text-align: center;
+}
+#myWebsite #goup{
+    width:60px;
+    height: 92px;
+    background: url("web-image/go-top.jpeg");
+    position: fixed;
+    bottom:20px;
+    right: 20px;
+}
+#myWebsite #goup:hover{
+    background-position: -93px;
 }
