@@ -59,10 +59,13 @@
                 Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start='+this.movielist.length+'&count=5')
                     .then((res)=>{
                           this.movielist = [...this.movielist,...res.data.subjects];
+                          //刷新时更换数组
                                if(res.data.subjects.length < 5){
                                    this.isEnd = true;
                                    this.isShow = false;
                                }
+                               // console.log(res.data.subjects);
+                               // console.log(this.movielist)
                         })
 
                      }
