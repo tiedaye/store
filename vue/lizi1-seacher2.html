@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="val" @keyup="select" >
+    <button @click="click">add</button>
+    <ul>
+        <li v-show="val.play" v-for="val in arr" @click="val.style = !val.style" :class="{red:val.style}">
+            {{val.value}}
+            <button @click="del(val.index)">del</button>
+        </li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            val:"",
+            arr:[]
+        },
+        methods:{
+            click(){
+                if(this.val!=""){
+                    this.arr.push({value:this.val,style:false,play:true});
+                    this.val = "";
+                   this.fn();
+                    this.arr.sort(function (a,b) {
+                        return a.value - b.value;
+                    });
+                }
+            },
+            select(){
+                this.fn();
+                this.arr.forEach(elem=>{
+                    if(elem.value.indexOf(this.val)==-1){
+                        elem.play = false;
+                    }
+                })
+
+            } ,
+            del(index){
+                this.arr.splice(index,1)
+            },
+            fn(){
+                this.arr.forEach(elem=>{
+                    elem.play = true;
+                });
+            }
+        } ,
+
+    })
+</script>
+</body>
+</html>
