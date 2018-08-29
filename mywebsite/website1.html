@@ -16,26 +16,13 @@
 <body>
 <div id="myWebsite">
     <div id="head">
-            <div id="menu">
+            <div id="menu" :class="{down:downShow}">
+                <img src="web-image/小丸子.jpeg" alt="" @click="click">
                 <ul class="title">
-                    <li class="home">
-                        <a href="">
-                            <p class="trangle">Home</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p class="trangle">Contact</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p class="trangle">About</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p class="trangle">Other</p>
+                    <li  v-for="(val,index) in arr" v-show="val.style"  class="title-li"
+                         :class="{bgColor:val.bg}" @mouseover="val.bg=true" @mouseout="val.bg=false">
+                        <a href="" >
+                           {{val.name}}
                         </a>
                     </li>
                 </ul>
@@ -139,5 +126,26 @@
 <script src="../tmall/font/iconfont.js"></script>
 <script src="../Dom/jslib.js"></script>
 <script src="website1.js"></script>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#head",
+        data:{
+            arr:[
+                {name:'Home',style:false,bg:false}, {name:'About',style:false,bg:false},
+                {name:'Contact',style:false,bg:false}, {name:'Other',style:false,bg:false}
+            ],
+            downShow:false
+        },
+        methods:{
+            click(){
+                this.arr.forEach(elem=>{
+                    elem.style = !elem.style;
+                });
+                this.downShow = !this.downShow;
+            }
+        }
+    })
+</script>
 </body>
 </html>
