@@ -14,7 +14,7 @@
     $(function () {
         $("#div1").click(function () {
             $.get('a.json',function (data) {
-                var $li = $(`<li>${data.a}</li>`) //见string
+                var $li = $(`<li>${data.a}</li>`);//见string
                 $('#div2').append($li); //插入
             },'json')
 
