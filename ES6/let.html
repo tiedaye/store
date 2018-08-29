@@ -27,13 +27,13 @@
  //
  //    var a =2;
  // function f1() {
- //     let a = 3;  a=2;在这不好使  暂时性死区
+ //     let a = 3;  //a=2;  //在这不好使  暂时性死区
  //     console.log(a);
  // }
  // f1();
  // console.log(a);
  // console.log(b);
-// var ali = document.getElementsByTagName('li');
+var ali = document.getElementsByTagName('li');
 // let 块级作用域  大括号都是它的作用域
 //    let 一个外部函数里面声明了一个内部函数，内部函数里面调用了
 //     外部函数的局部变量，这个时候，局部变量不被释放  闭包
@@ -67,7 +67,7 @@
             let a =4;
             console.log(a)
         }
-        // console.log(a);
+        console.log(a);
         return f4;
 
     }
