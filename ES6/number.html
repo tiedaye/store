@@ -7,13 +7,14 @@
 <body>
 <script>
      var arr = '123eee';
-     console.log(parseInt(arr));
+     console.log(parseInt(arr));//parseInt  输出前几个数字 中间用字母间隔不好使  parseFloat也一样
      console.log(parseFloat(arr));
      console.log(isNaN('www'));
      console.log(Number.isNaN(NaN));
      console.log(isFinite(6));  //是不是数字  是，返回false
-    console.log(Math.sign(0));
+     console.log(Math.sign(0));  //正数返回1   负数返回-1   0返回0
      console.log(Math.ceil(9.0003)); //向上取整  取大的
+     console.log(Math.floor(9.9999)); //向下取整  取小的
      console.log(Math.sign(0));
 </script>
 </body>
