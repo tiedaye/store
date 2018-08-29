@@ -29,4 +29,4 @@ oright.onclick = function () {
          scrollTo(0,0);
      }
   },50)
-}
+};
