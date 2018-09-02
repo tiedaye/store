@@ -1,32 +1,33 @@
 <template>
         <ul class="footer" :style="{background:bgColor}">
             <li v-for="val in list" >
-                <router-link :to="val.path" @click.native="changfather(val)">{{val.name}}</router-link>
-                <!--<router-link :to="val.path" @click.native="changbg(val)">{{val.name}}</router-link>-->
+                <!--<router-link :to="val.path" @click.native="changfather(val)">{{val.name}}</router-link>-->
+                <router-link :to="val.path" @click.native="changbg(val)">{{val.name}}</router-link>
             </li>
         </ul>
 </template>
 <script>
     import { mapState } from 'vuex'
     export default{
-        data(){
-            return {
-                bgColor:'rgb(33, 150, 243)'
-            }
-        },
-        props:['list'],
-        // computed:mapState(['bgColor']),
-        // methods:{
-        //     changbg(menu){
-        //         this.$store.dispatch('changbg',menu)
+        // data(){
+        //     return {
+        //         // bgColor:''
         //     }
         // },
+        props:['list'],
+        computed:mapState(['bgColor']),
         methods:{
-            changfather(menu){
+            changbg(menu){
                 this.bgColor = menu.bgColor;
-                this.$emit('changfather',menu);
+                this.$store.dispatch('changbg',menu)
             }
-        }
+        },
+        // methods:{
+        //     changfather(menu){
+        //         this.bgColor = menu.bgColor;
+        //         this.$emit('changfather',menu);
+        //     }
+        // }
     }
 </script>
 <style lang="scss">
