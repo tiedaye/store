@@ -3,8 +3,8 @@
       <CHeader></CHeader>
     <CHeader :Color="bgColor" :tit="title"></CHeader>
        <router-view class="content"/>
-      <!--<Cfooter :list="list"></Cfooter>-->
-    <Cfooter :list="list" @changfather="xx"></Cfooter>
+      <Cfooter :list="list"></Cfooter>
+    <!--<Cfooter :list="list" @changfather="xx"></Cfooter>-->
   </div>
 </template>
 <script>
