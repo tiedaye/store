@@ -1,15 +1,15 @@
 <template>
-    <div class="header" :style="{background:Color}">
+    <div class="header" :style="{background:bgColor}">
         首页
-        <h1 class="header-title">{{tit}}</h1>
+        <h1 class="header-title">{{title}}</h1>
     </div>
 </template>
 <script>
   import {mapState} from 'vuex';
 
     export  default{
-        props:['Color','tit'],
-      // computed:mapState(['bgColor','title'])
+        // props:['Color','tit'],
+      computed:mapState(['bgColor','title'])
     }
 </script>
 <style lang="scss">
