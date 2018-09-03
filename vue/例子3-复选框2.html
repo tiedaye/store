@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    是否需要额外费用设施:
+    <input type="checkbox" @click="click">
+    <ul v-show="show">
+        <li v-for="val in list">
+            {{val.name}}({{val.value}})
+            <input type="checkbox" v-model="list1" :value="val">
+        </li>
+    </ul>
+    <p>订单费用信息:</p>
+    <ul>
+        <li v-for="val in list1">
+            {{val.name}}({{val.value}})
+        </li>
+    </ul>
+    总金额:{{total}}
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            show:false,
+            list:[
+                {
+                    name:"沙发",value:200
+                },
+                {
+                    name:"空调",value:300
+                },
+                {
+                    name:"wifi",value:20
+                }
+            ],
+            list1:[
+                {
+                    name:"群力花园豪华型",value:400
+                }
+            ]
+        },
+        methods:{
+            click(){
+                this.show = !this.show;
+                    this.list1.splice(1);
+            }
+        },
+        computed:{
+            total(){
+                let sum = 0;
+                this.list1.forEach(elem=>{
+                     sum += elem.value;
+                });
+                return sum;
+            }
+        }
+    })
+</script>
+</body>
+</html>
