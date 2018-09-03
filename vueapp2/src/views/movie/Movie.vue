@@ -44,6 +44,7 @@
             detail(movieobj){
                 console.log(1111);
                 this.$router.push('/moviedetail/'+ movieobj.id);
+                // 获取参数的时候写route  push的时候写router
             },
             getData(){
                 // Axios.get('/movie.json')
