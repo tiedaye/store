@@ -15,6 +15,7 @@
         data(){
             return{
                 index:this.$route.params.index
+                // 获取参数的时候写route  push的时候写router
             }
         },
         // created(){
