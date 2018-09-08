@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                num:200
+            }
+        }
+        change(reduce){
+            this.setState({
+                num:this.state.num - reduce
+            });
+            if(this.state.num<=10){
+                this.setState({
+                    num:0
+                })
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <h1>{this.props.name}{this.state.num}</h1>
+                    <Boss name="a" number="10" myClick={this.change.bind(this)}> </Boss>
+                    <Boss name="b" number="20" myClick={this.change.bind(this)}> </Boss>
+                </div>
+            )
+        }
+    }
+    class Boss extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                num:100
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <h3>将军{this.props.name}有士兵:{this.state.num}</h3>
+                    <button onClick={
+                        ()=>{
+                                this.props.myClick(this.props.number);
+                                this.state.num+=Number(this.props.number);
+                            }
+                    }>调兵</button>
+                </div>
+
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <Main name="全部士兵数量:"> </Main>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>
