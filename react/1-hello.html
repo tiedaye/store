@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+  <!--react相关的引入顺序不能换-->
+  <script src="react.development.js"></script>
+  <script src="react-dom.development.js"></script>
+  <!--转es6语法-->
+  <script src="browser.min.js"></script>
+
+  <script type="text/babel">
+      ReactDOM.render(
+          <div>
+              <h1>hello world</h1>
+              <h2>ertyuiopfghjk</h2>
+              <p>znsjksjkfkdkd</p>
+          </div>,
+          document.getElementById("root")
+      );
+  </script>
+</body>
+</html>
