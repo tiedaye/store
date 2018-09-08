@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    //函数方法
+    const Welcome = (props)=> {
+        return (
+            <div>
+                <h1>{props.children}</h1>
+                <h2>{props.name}</h2>
+                <h3>{props.age}</h3>
+                <p>pppppp</p>
+            </div>
+        );
+    };
+        let Component = (value)=>{
+            return(
+                    <div>
+                        <h1>{value.children}</h1>
+                        <h4>{value.name}</h4>
+                        <h5>{value.age}</h5>
+                    </div>
+                )
+        };
+    ReactDOM.render(
+        <div>
+            <Welcome name="zhangwu" age="12" sex="女">学生1信息:</Welcome>
+            <Component name="lisi" age="18">学生2信息:</Component>
+        </div>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>
