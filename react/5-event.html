@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--this指向问题在es6里面-->
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    //定义类的方法
+    class Welcome extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                age : 10
+            };
+        }
+        click(event,num){
+            console.log(event,num);
+            console.log(event.target);
+            console.log(this.refs.h1);
+            // event.target.style.background = "#0f0"
+            this.refs.h1.style.background = "#f00"
+        }
+        render(){
+            return (
+                <div>
+                    <button onClick={(event)=>{this.click(event,111)}}>add</button>
+                    <h1 ref="h1">{this.props.children} {this.props.name} {this.state.age}</h1>
+                </div>
+
+            )
+        }
+    }
+    ReactDOM.render(
+        <Welcome name="zhangsan">学生信息:</Welcome>,
+        document.getElementById("root")
+    );
+</script>
+</body>
+</html>
