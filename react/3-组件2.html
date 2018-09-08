@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    //定义类的方法
+    class Welcome extends React.Component{
+        constructor(props){
+            super(props);
+            console.log(this.props);
+            this.xx = '改成lisi';
+        }
+        render(){
+            return (
+                <div>
+                    <h1>{this.props.children}</h1>
+                    <h3>{this.props.name} {this.xx}</h3>
+                    <h3>{this.props.age}</h3>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Welcome name="zhangsan" age="14" sex="男">学生信息3:</Welcome>,
+            document.getElementById("root")
+    );
+</script>
+</body>
+</html>
