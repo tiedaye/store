@@ -18,13 +18,12 @@
             }
         }
         change(reduce){
-            this.setState({
-                num:this.state.num - reduce
-            });
-            if(this.state.num<=10){
+            if(this.state.num>=10){
                 this.setState({
-                    num:0
-                })
+                    num:this.state.num - reduce
+                });
+            }else{
+                alert("士兵数量不足……");
             }
         }
         render(){
