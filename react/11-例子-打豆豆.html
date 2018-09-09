@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            border: 1px solid #ccc;
+            border-radius: 2%;
+        }
+        li{
+            width: 300px;
+            display: inline;
+            height: 50px;
+            list-style: none;
+            line-height: 50px;
+        }
+        #root{
+            width: 500px;
+            margin: 0 auto;
+        }
+        #root h1{
+            text-align: center;
+        }
+        #root .taskFont{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn{
+            display: block;
+            background: #00ff00;
+            color: #fff;
+            width: 70px;
+            height: 30px;
+            border: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends  React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                list:[
+                    {
+                        name:"吃饭饭"
+                    },
+                    {
+                        name:"睡觉觉"
+                    },
+                    {
+                        name:"打豆豆"
+                    }
+                ]
+            }
+        }
+        save(xx){
+            console.log(xx);
+            var arr = this.state.list;
+            arr.push({name:xx});
+            this.setState({
+                list:arr
+            })
+        }
+        del(xx){
+            console.log(111);
+            var array = this.state.list;
+            array.splice(xx,1);
+            this.setState({
+                list:array
+            })
+        }
+        render(){
+            return(
+                <div>
+                    <h1>todoList</h1>
+                    <Task myClick={this.save.bind(this)}> </Task>
+                    <ul>
+                        <TodoList listItem={this.state.list} delete={this.del.bind(this)}> </TodoList>
+                        <li>0已完成/0全部</li>
+                    </ul>
+
+                </div>
+
+            )
+        }
+    }
+    class Task extends React.Component{
+        constructor(props){
+            super(props);
+        }
+        saveTask(){
+            if(this.refs.myText.value){
+                this.props.myClick(this.refs.myText.value);
+                this.refs.myText.value=null;
+            }
+                }
+        render(){
+            let style = {
+                marginLeft:"20px",
+                width:"200px",
+                height:"25px",
+            };
+            return(
+                <div>
+                    <span className="taskFont">任务:</span>
+                    <input style={style} placeholder="安排新的任务吧。。。" ref="myText" type="text"/>
+                    <input className="btn" onClick={this.saveTask.bind(this)} type="button" value="添加任务"/>
+                </div>
+            )
+        }
+    }
+    class TodoList extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                msg:false
+            }
+        }
+        change(xxx){
+            this.props.listItem.forEach((elem,index)=>{
+                if(index==xxx){
+                    this.setState({
+                        msg:!this.state.msg
+                    });
+                }
+            });
+
+            console.log(this.state.msg)
+        }
+        render(){
+            let style = {
+                borderRadius:"10%",
+                marginLeft:"333px"
+            };
+            let middleLine ={
+                color:"#ccc"
+            };
+            if(this.state.msg){
+                 middleLine = {
+                    color:'#0f0'
+                };
+            }
+
+            return(
+                <li>
+                    {
+                        this.props.listItem.map((elem,index)=>{
+                            return(
+                                    <div key={index}>
+                                        <input type="checkbox" onClick={this.change.bind(this,index)}/>
+                                        <span style={middleLine}>{elem.name}</span>
+                                        <button style={style} onClick={this.props.delete.bind(this,index)}>删除</button>
+                                    </div>
+                                )
+
+
+                        })
+                    }
+
+                </li>
+
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main> </Main>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>
