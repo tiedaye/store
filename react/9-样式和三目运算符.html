@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+            color: #0086b3;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Show extends React.Component{
+        constructor(props){
+            super(props);
+            this.state= {
+                isShow:false
+            }
+        }
+        change(){
+            this.setState({
+                isShow:!this.state.isShow
+            })
+
+        }
+        render(){
+            let style = {
+                background:"wheat",
+                color:"#000"
+            };
+            // let elem = null;
+            // if(this.state.isShow){
+            //     elem =  <h1 className="a">hello</h1>;
+            // }
+            return(
+                <div>
+                    <button onClick={this.change.bind(this)}>click</button>
+                    {
+                        this.state.isShow?<h1 className="a">hello</h1>:null
+                    }
+                    <p style={style}>world</p>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Show> </Show>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>
