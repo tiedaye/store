@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Show extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state={
+                msg:123
+            }
+        }
+        change(event){
+            this.setState({
+                msg:event.target.value
+            })
+        }
+        render(){
+            return(
+                <div>
+                    <h1>{this.state.msg}</h1>
+                    <input defaultValue={this.state.msg} onChange={this.change.bind(this)} type="text"/>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+         <Show> </Show>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>
