@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Show extends React.Component{
+        constructor(props){
+            super(props);
+            this.list=[
+                {
+                    name:"电视",
+                    price:1000
+                },
+                {
+                    name:"电脑",
+                    price:5000
+                },
+                {
+                    name:"手机",
+                    price:6000
+                }
+            ]
+        }
+        render(){
+            return(
+                <ul>
+                    {
+                        this.list.map((elem,index)=>{
+                            return <li key={index}>{elem.name}--{elem.price}</li>
+                    })
+                    }
+                </ul>
+
+
+            )
+        }
+    }
+    ReactDOM.render(
+        <Show> </Show>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>
