@@ -35,6 +35,9 @@
             border: none;
             margin-top: 10px;
         }
+        .middleLine{
+            color:#0f0;
+        }
     </style>
 </head>
 <body>
@@ -47,15 +50,19 @@
         constructor(props){
             super(props);
             this.state={
+                msg:0,
                 list:[
                     {
-                        name:"吃饭饭"
+                        name:"吃饭饭",
+                        show:0
                     },
                     {
-                        name:"睡觉觉"
+                        name:"睡觉觉",
+                        show:0
                     },
                     {
-                        name:"打豆豆"
+                        name:"打豆豆",
+                        show:0
                     }
                 ]
             }
@@ -63,10 +70,31 @@
         save(xx){
             console.log(xx);
             var arr = this.state.list;
-            arr.push({name:xx});
+            arr.push({name:xx,show:0});
             this.setState({
                 list:arr
             })
+        }
+        change(xxx){
+            var arr = this.state.list
+            arr.forEach((elem,index)=>{
+                if(index==xxx){
+                    elem.show = !elem.show ;
+                    this.setState({
+                        list:arr,
+                    });
+                    if(elem.show){
+                        this.setState({
+                            msg:++this.state.msg
+                        });
+                    }else{
+                        this.setState({
+                            msg:--this.state.msg
+                        });
+                    }
+                }
+            });
+
         }
         del(xx){
             console.log(111);
@@ -82,12 +110,10 @@
                     <h1>todoList</h1>
                     <Task myClick={this.save.bind(this)}> </Task>
                     <ul>
-                        <TodoList listItem={this.state.list} delete={this.del.bind(this)}> </TodoList>
-                        <li>0已完成/0全部</li>
+                        <TodoList listItem={this.state.list} delete={this.del.bind(this)} changeItem={this.change.bind(this)}> </TodoList>
+                        <li>{this.state.msg}已完成/3全部</li>
                     </ul>
-
                 </div>
-
             )
         }
     }
@@ -119,34 +145,12 @@
     class TodoList extends React.Component{
         constructor(props){
             super(props);
-            this.state={
-                msg:false
-            }
-        }
-        change(xxx){
-            this.props.listItem.forEach((elem,index)=>{
-                if(index==xxx){
-                    this.setState({
-                        msg:!this.state.msg
-                    });
-                }
-            });
-
-            console.log(this.state.msg)
         }
         render(){
             let style = {
                 borderRadius:"10%",
                 marginLeft:"333px"
             };
-            let middleLine ={
-                color:"#ccc"
-            };
-            if(this.state.msg){
-                 middleLine = {
-                    color:'#0f0'
-                };
-            }
 
             return(
                 <li>
@@ -154,16 +158,13 @@
                         this.props.listItem.map((elem,index)=>{
                             return(
                                     <div key={index}>
-                                        <input type="checkbox" onClick={this.change.bind(this,index)}/>
-                                        <span style={middleLine}>{elem.name}</span>
+                                        <input type="checkbox" onClick={()=>{this.props.changeItem(index)}}/>
+                                        <span className={this.props.listItem[index].show?"middleLine":""}>{elem.name}</span>
                                         <button style={style} onClick={this.props.delete.bind(this,index)}>删除</button>
                                     </div>
                                 )
-
-
                         })
                     }
-
                 </li>
 
             )
