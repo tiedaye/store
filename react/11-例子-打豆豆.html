@@ -8,10 +8,10 @@
             border: 1px solid #ccc;
             border-radius: 2%;
         }
-        li{
+        .totalli{
             width: 300px;
             display: inline;
-            height: 50px;
+            height: 70px;
             list-style: none;
             line-height: 50px;
         }
@@ -37,6 +37,7 @@
         }
         .middleLine{
             color:#0f0;
+            background: yellow;
         }
     </style>
 </head>
@@ -76,13 +77,13 @@
             })
         }
         change(xxx){
-            var arr = this.state.list
+            var arr = this.state.list;
+            arr[xxx].show = !arr[xxx].show ;
+            this.setState({
+                list:arr,
+            });
             arr.forEach((elem,index)=>{
                 if(index==xxx){
-                    elem.show = !elem.show ;
-                    this.setState({
-                        list:arr,
-                    });
                     if(elem.show){
                         this.setState({
                             msg:++this.state.msg
@@ -102,6 +103,9 @@
             array.splice(xx,1);
             this.setState({
                 list:array
+            });
+            this.setState({
+                msg:--this.state.msg
             })
         }
         render(){
@@ -110,8 +114,13 @@
                     <h1>todoList</h1>
                     <Task myClick={this.save.bind(this)}> </Task>
                     <ul>
-                        <TodoList listItem={this.state.list} delete={this.del.bind(this)} changeItem={this.change.bind(this)}> </TodoList>
-                        <li>{this.state.msg}已完成/3全部</li>
+                        {
+                        this.state.list.map((elem,index)=>{
+                            return <TodoList key={index}  elem={elem} index={index} delete={this.del.bind(this)} changeItem={this.change.bind(this)}> </TodoList>
+                        })
+                    }
+
+                        <p>{this.state.msg}已完成/3全部</p>
                     </ul>
                 </div>
             )
@@ -153,18 +162,10 @@
             };
 
             return(
-                <li>
-                    {
-                        this.props.listItem.map((elem,index)=>{
-                            return(
-                                    <div key={index}>
-                                        <input type="checkbox" onClick={()=>{this.props.changeItem(index)}}/>
-                                        <span className={this.props.listItem[index].show?"middleLine":""}>{elem.name}</span>
-                                        <button style={style} onClick={this.props.delete.bind(this,index)}>删除</button>
-                                    </div>
-                                )
-                        })
-                    }
+                <li className="totalli" className={this.props.elem.show?"middleLine":""}>
+                            <input type="checkbox" onClick={()=>{this.props.changeItem(this.props.index)}}/>
+                            <span >{this.props.elem.name}</span>
+                            <button style={style} onClick={this.props.delete.bind(this,this.props.index)}>删除</button>
                 </li>
 
             )
