@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        ul{
-            border: 1px solid #ccc;
-            border-radius: 2%;
-        }
-        .totalli{
-            width: 300px;
-            display: inline;
-            height: 70px;
-            list-style: none;
-            line-height: 50px;
+        *{
+            margin: 0 ;
+            padding: 0;
         }
         #root{
-            width: 500px;
+            width: 600px;
             margin: 0 auto;
+        }
+        #root ul{
+            width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 2%;
+            margin-top: 20px;
+        }
+        #root li{
+            height: 50px;
+            list-style: none;
+            line-height: 50px;
+            padding: 0 20px;
+            border-bottom: 1px solid #ccc;
+            background: #e0fdb6;
+        }
+        #root ul p{
+            height: 50px;
+            line-height: 50px;
+            padding-left: 20px;
+        }
+        button{
+            margin-top: 15px;
+            float: right;
         }
         #root h1{
             text-align: center;
@@ -35,9 +51,10 @@
             border: none;
             margin-top: 10px;
         }
-        .middleLine{
-            color:#0f0;
-            background: yellow;
+        #root .middleLine{
+            color:darkcyan;
+            background: #fffc9f;
+            text-decoration: line-through;
         }
     </style>
 </head>
@@ -116,7 +133,7 @@
                     <ul>
                         {
                         this.state.list.map((elem,index)=>{
-                            return <TodoList key={index}  elem={elem} index={index} delete={this.del.bind(this)} changeItem={this.change.bind(this)}> </TodoList>
+                            return <TodoList key={elem.name}  elem={elem} index={index} delete={this.del.bind(this)} changeItem={this.change.bind(this)}> </TodoList>
                         })
                     }
 
@@ -158,11 +175,10 @@
         render(){
             let style = {
                 borderRadius:"10%",
-                marginLeft:"333px"
             };
 
             return(
-                <li className="totalli" className={this.props.elem.show?"middleLine":""}>
+                <li className={this.props.elem.show?"middleLine":""}>
                             <input type="checkbox" onClick={()=>{this.props.changeItem(this.props.index)}}/>
                             <span >{this.props.elem.name}</span>
                             <button style={style} onClick={this.props.delete.bind(this,this.props.index)}>删除</button>
