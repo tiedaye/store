@@ -10,6 +10,7 @@ const act = (num)=>{
 class App extends Component {
   sub(num){
     store.dispatch(act(num));
+    //自动传给reducer，然后在reducer中就可以调用了
   }
   render(){
     return (
