@@ -1,0 +1,31 @@
+.total{
+    display: flex;
+}
+.ad{
+    background-color: #ffffff;
+    flex: 1;
+    width: 0;
+    text-align: center;
+    margin-top: 8px;
+}
+.ad img{
+    width: 125px;
+    height: 125px;
+}
+.ad .font{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 7px;
+}
+.ad .we{
+    color: #0f0;
+}
+.ad .low{
+    color: #f00;
+}
+.ad .work{
+    color: deeppink;
+}
+.ad .down-font{
+    margin-top: 10px;
+}
