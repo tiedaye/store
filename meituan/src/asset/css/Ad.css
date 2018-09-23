@@ -9,8 +9,7 @@
     margin-top: 8px;
 }
 .ad img{
-    width: 125px;
-    height: 125px;
+    width: 1.6rem;
 }
 .ad .font{
     font-weight: bold;
@@ -18,7 +17,7 @@
     margin-top: 7px;
 }
 .ad .we{
-    color: #0f0;
+    color: rgb(68,145,48);
 }
 .ad .low{
     color: #f00;
