@@ -1,30 +1,9 @@
 .menu{
     margin-top: 8px;
+}
+.menu .title{
     background-color: #fff;
-    border-top: 1px solid #ccc;
-}
-.menu .menu-li{
-    display: flex;
-}
-.menu .menu-li img{
-    width: 90px;
-    height: 90px;
-}
-.menu .menu-li div{
-    flex: 1;
-    margin-left: 10px;
+    padding-top: 8px;
+    padding-left: 8px;
     border-bottom: 1px solid #ccc;
-}
-.menu .menu-li div p{
-    margin-top: 8px;
-    margin-bottom: 5px;
-}
-.menu .menu-li .sale{
-    position: absolute;
-    right: 15px;
-}
-.menu .menu-li .price{
-    font-size: 15px;
-    font-weight: bold;
-    color:#5abe73;
 }
