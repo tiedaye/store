@@ -1,4 +1,5 @@
 import React,{ Component } from "react"
+import "../asset/css/Ad.css"
 export default class Ad extends Component{
     render(){
         return(
