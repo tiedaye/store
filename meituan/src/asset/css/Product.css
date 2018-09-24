@@ -1,0 +1,25 @@
+.product{
+    background-color: #fff;
+    padding: 10px 10px;
+}
+.product .product-li{
+    display: flex;
+}
+.product .product-li img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.product .product-li div{
+    flex: 1;
+    margin-left: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.product .product-li .sale{
+    position: absolute;
+    right: 15px;
+}
+.product .product-li .price{
+    font-size: 15px;
+    font-weight: bold;
+    color:#5abe73;
+}
