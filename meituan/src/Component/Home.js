@@ -1,14 +1,13 @@
 import React,{ Component } from "react"
+import "whatwg-fetch"
 import "../asset/css/Home.css"
-import "../asset/css/Ad.css"
-import "../asset/css/Menu.css"
-import { NavBar} from 'antd-mobile';
-import {  Icon,SearchBar,Grid } from 'antd-mobile';
+import {  Icon,SearchBar,Grid,NavBar} from 'antd-mobile';
 import Ad from "./Ad"
 import Menu from "./Menu"
+import Product from "./Product"
 export default class Home extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state={
             data:[
             {
@@ -67,8 +66,19 @@ export default class Home extends Component {
                 icon:require('./../asset/img/img4.png'),
                 text:"电影"
             }
-            ]
+            ],
+            foodList:[]
         }
+    }
+    componentWillMount(){
+        fetch("http://www.xiechenxi.cn").then((res)=>{
+            return res.json()
+        }).then((data)=>{
+            this.setState({
+                foodList: data
+            });
+            console.log(data)
+        })
     }
         render()
         {
@@ -82,7 +92,15 @@ export default class Home extends Component {
                     </NavBar>
                     <Grid data={this.state.data} isCarousel hasLine={false} columnNum={5}/>
                     <Ad></Ad>
-                    <Menu></Menu>
+                    <Menu title="猜你喜欢">
+                        {
+                            this.state.foodList.map((elem,index)=>{
+                                return (
+                                    <Product key={elem.product_id} elem={elem}></Product>
+                                )
+                            })
+                        }
+                    </Menu>
                 </div>);
         }
 }
