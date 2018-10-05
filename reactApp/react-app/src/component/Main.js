@@ -43,11 +43,11 @@ class Main extends Component{
                         <NavLink activeClassName="selected"
                                  activeStyle={{color:"red"}} to="/">跳转Home</NavLink>
                         --------
-                        <NavLink to="/aa/4">跳转A</NavLink>
+                        <NavLink to="/aa/4" activeClassName="selected" activeStyle={{color:"red"}} >跳转A</NavLink>
                         --------
                         <NavLink to="/bb">跳转B</NavLink>
                         --------
-                        <NavLink activeClassName="selected" isActive={(props)=>{
+                        <NavLink isActive={(props)=>{
                             console.log(props)
                              }} to="/render">跳转render</NavLink>
                         --------
