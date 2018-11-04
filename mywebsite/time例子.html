@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html{
+            background: gray;
+        }
+        #clock{
+            width: 200px;
+            height: 200px;
+            border: 2px solid;
+            border-radius: 50%;
+            margin: 200px auto;
+            position: relative;
+        }
+        #dial li{
+            width: 2px;
+            height: 6px;
+            background: #000000;
+            list-style: none;
+            position: absolute;
+            top: 0;
+            left: 100px;
+            transform-origin: 0 100px;
+        }
+        #dial li:nth-child(5n+1){
+            height: 10px;
+        }
+        #hour{
+            width: 4px;
+            height: 40px;
+            background: palevioletred;
+            position: absolute;
+            top: 60px;
+            left: 98px;
+            transform-origin: bottom;
+        }
+        #minute{
+            width: 4px;
+            height: 60px;
+            background: plum;
+            position: absolute;
+            left: 98px;
+            top: 40px;
+            transform-origin: bottom;
+        }
+        #second{
+            width: 2px;
+            height: 70px;
+            background: purple;
+            position: absolute;
+            left: 99px;
+            top: 30px;
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <ul id="dial">
+        <li style="transform: rotate(0deg)"></li>
+        <li style="transform: rotate(6deg)"></li>
+        <li style="transform: rotate(12deg)"></li>
+        <li style="transform: rotate(18deg)"></li>
+        <li style="transform: rotate(24deg)"></li>
+        <li style="transform: rotate(30deg)"></li>
+        <li style="transform: rotate(36deg)"></li>
+        <li style="transform: rotate(42deg)"></li>
+        <li style="transform: rotate(48deg)"></li>
+        <li style="transform: rotate(54deg)"></li>
+        <li style="transform: rotate(60deg)"></li>
+        <li style="transform: rotate(66deg)"></li>
+        <li style="transform: rotate(72deg)"></li>
+        <li style="transform: rotate(78deg)"></li>
+        <li style="transform: rotate(84deg)"></li>
+        <li style="transform: rotate(90deg)"></li>
+        <li style="transform: rotate(96deg)"></li>
+        <li style="transform: rotate(102deg)"></li>
+        <li style="transform: rotate(108deg)"></li>
+        <li style="transform: rotate(114deg)"></li>
+        <li style="transform: rotate(120deg)"></li>
+        <li style="transform: rotate(126deg)"></li>
+        <li style="transform: rotate(132deg)"></li>
+        <li style="transform: rotate(138deg)"></li>
+        <li style="transform: rotate(144deg)"></li>
+        <li style="transform: rotate(150deg)"></li>
+        <li style="transform: rotate(156deg)"></li>
+        <li style="transform: rotate(162deg)"></li>
+        <li style="transform: rotate(168deg)"></li>
+        <li style="transform: rotate(174deg)"></li>
+        <li style="transform: rotate(180deg)"></li>
+        <li style="transform: rotate(186deg)"></li>
+        <li style="transform: rotate(192deg)"></li>
+        <li style="transform: rotate(198deg)"></li>
+        <li style="transform: rotate(204deg)"></li>
+        <li style="transform: rotate(210deg)"></li>
+        <li style="transform: rotate(216deg)"></li>
+        <li style="transform: rotate(222deg)"></li>
+        <li style="transform: rotate(228deg)"></li>
+        <li style="transform: rotate(234deg)"></li>
+        <li style="transform: rotate(240deg)"></li>
+        <li style="transform: rotate(246deg)"></li><li style="transform: rotate(252deg)"></li><li style="transform: rotate(258deg)"></li><li style="transform: rotate(264deg)"></li><li style="transform: rotate(270deg)"></li><li style="transform: rotate(276deg)"></li><li style="transform: rotate(282deg)"></li><li style="transform: rotate(288deg)"></li><li style="transform: rotate(294deg)"></li><li style="transform: rotate(300deg)"></li><li style="transform: rotate(306deg)"></li><li style="transform: rotate(312deg)"></li><li style="transform: rotate(318deg)"></li><li style="transform: rotate(324deg)"></li><li style="transform: rotate(330deg)"></li><li style="transform: rotate(336deg)"></li><li style="transform: rotate(342deg)"></li><li style="transform: rotate(348deg)"></li><li style="transform: rotate(354deg)"></li>
+    </ul>
+    <div id="hour" style="transform: rotate(277.792deg);"></div>
+    <div id="minute" style="transform: rotate(93.5deg);"></div>
+    <div id="second" style="transform: rotate(210deg);"></div>
+</div>
+<script>
+    (function(){
+        var oDial = document.getElementById("dial");
+        var oHour = document.getElementById("hour");
+        var oMinute = document.getElementById("minute");
+        var oSecond = document.getElementById("second");
+//         for(var i=0; i<60; i++){
+// //                var oLi = document.createElement("li");
+// //                oDial.appendChild(oLi);
+//             oDial.innerHTML += "<li style='transform: rotate("+ i * 6 +"deg)'></li>";
+//         }
+        run();
+        setInterval(run, 1000);
+        function run(){
+            var now = new Date();
+            var nowSecond = now.getSeconds();
+            var nowMinute = now.getMinutes() + nowSecond / 60;
+            var nowHour = now.getHours() + nowMinute / 60;
+
+            oSecond.style.transform = "rotate(" + nowSecond * 6 + "deg)";
+            oMinute.style.transform = "rotate("+ nowMinute * 6 +"deg)";
+            oHour.style.transform = "rotate("+ nowHour * 30 +"deg)";
+        }
+
+    })();
+
+</script>
+
+</body>
+</html>
