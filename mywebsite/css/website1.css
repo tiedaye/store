@@ -10,57 +10,6 @@ li{
 }
 body{
     width: 1500px;
-    height: 3000px;
-}
-#menu>img{
-    width: 50px;
-    height:50px;
-    position: absolute;
-    top: 20px;
-    left: 200px;
-}
-#head{
-    width: 1550px;
-    height: 700px;
-    /*background: url("web-image/banner2.jpg") center center fixed;*/
-    background: -webkit-gradient(linear, 0 0, 0 bottom, from(pink), to(#fde2e7))center center fixed;
-    background-size: cover;
-    overflow: hidden;
-    z-index: -1;
-}
-#header{
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
-
-}
-#head  .down{
-    margin-bottom: 215px;
-}
-#head #menu .title{
-    float: right;
-    width: 50%;
-    margin: 20px 300px;
-}
-#head #menu .title .title-li{
-    float: left;
-    width: 80px;
-    height: 50px;
-    margin-right: 100px;
-    text-align: center;
-    line-height: 50px;
-}
-#head #menu .title .bgColor{
-    display: block;
-    width: 80px;
-    height: 50px;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-#menu .title .bgColor:hover{
-    transform-style: preserve-3d;
-    animation: yyy 2s linear;
 }
 @keyframes yyy {
     from{
@@ -69,16 +18,6 @@ body{
     to{
         transform: rotateY(360deg);
     }
-}
-#header img{
-    width: 100%;
-    height: 95%;
-    border-radius: 50%;
-}
-#header h3{
-    font-size: 40px;
-    color: #589fb5;
-    padding-left: 15px;
 }
 #middle .infor-img2{
     position: relative;
@@ -99,6 +38,54 @@ body{
     position: absolute;
     top: -40px;
     left: 1000px;
+}
+#middle .infor-font{
+    width:600px;
+    height: 800px;
+    background: white;
+    padding: 30px 30px;
+    border: 2px solid #cccccc;
+    color:gray;
+    float: left;
+}
+#contain{
+    width: 520px;
+    height: 460px;
+    margin: 10px 40px;
+    position: relative;
+    float: left;
+}
+#contain img{
+    width: 520px;
+    height: 460px;
+    position: absolute;
+}
+#contain .num{
+    position: absolute;
+    right: 200px;
+    bottom: 10px;
+    z-index: 9999999;
+}
+#contain .arrows{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 9999999;
+}
+#contain .num li,.arrows span{
+    float: left;
+    color: red;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 10px;
+    background: bisque;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#contain li.selected{
+    background: hotpink;
 }
 #aboutMe p{
      font-size: 40px;
@@ -144,15 +131,15 @@ body{
     width: 70px;
     height: 50px;
     background: #cccccc;
+    float: left;
+    margin-left: 5px;
     font-size: 16px;
     color: #ffffff;
-    float: left;
     text-align: center;
     line-height: 50px;
-    margin-right: 10px;
 }
 #information{
-    /*background: ;*/
+    overflow: hidden;
 }
 #information .infor-font{
     width:650px;
@@ -168,10 +155,30 @@ body{
     width: 650px;
     text-align: center;
 }
+#myWebsite #technology{
+    height: 500px;
+}
+#technology {
+    height: 500px;
+
+}
+#technology #one,#two,#three{
+    margin-left: 233px;
+    margin-top: 30px;
+
+}
+#technology #four{
+    margin-top: 100px;
+    margin-left: 453px;
+}
+#technology #five{
+    margin-top: 100px;
+    margin-left: 234px;
+}
 #myWebsite #goup{
     width:60px;
     height: 92px;
-    background: url("web-image/go-top.jpeg");
+    background: url("../web-image/go-top.jpeg");
     position: fixed;
     bottom:20px;
     right: 20px;
