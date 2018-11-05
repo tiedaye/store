@@ -127,6 +127,7 @@ body{
 #container #font{
     margin: 230px 320px;
 }
+
 #container #font li{
     width: 70px;
     height: 50px;
@@ -155,26 +156,57 @@ body{
     width: 650px;
     text-align: center;
 }
-#myWebsite #technology{
-    height: 500px;
-}
 #technology {
     height: 500px;
-
+    margin: 50px 30px;
 }
-#technology #one,#two,#three{
-    margin-left: 233px;
-    margin-top: 30px;
-
+#technology .chart .language{
+    font-size: 25px;
+    color: #4ebdd1;
 }
-#technology #four{
+#technology .chart .dongImg{
+    width:285px;
+    height: 285px;
+}
+#myWebsite #mywork{
+    width:100%;
+    height: 600px;
     margin-top: 100px;
-    margin-left: 453px;
+    background: url("../web-image/banner2.jpg") center center no-repeat;
 }
-#technology #five{
-    margin-top: 100px;
-    margin-left: 234px;
+#myWebsite #mywork #detail{
+    width: 520px;
+    height: 280px;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
 }
+#detail #imgs{
+    width: 2080px;
+    position: absolute;
+}
+#detail img{
+    width: 520px;
+    height: 280px;
+    float: left;
+}
+#detail .num{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 9999999;
+}
+#detail .arrows{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 9999999;
+}
+#detail li.selected{
+    background: #0086b3;
+}
+
+/*//////////*/
 #myWebsite #goup{
     width:60px;
     height: 92px;
