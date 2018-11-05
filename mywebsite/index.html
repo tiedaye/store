@@ -235,21 +235,47 @@
         <div id="technology">
             <div class="chart">
                 <div>
-                    <canvas  id="one" width="200" height="200" style="border:1px solid #e5e5e5"></canvas>
-                    <canvas  id="two" width="200" height="200" style="border:1px solid #e5e5e5"></canvas>
-                    <canvas  id="three" width="200" height="200" style="border:1px solid #e5e5e5"></canvas>
+                    <canvas  id="one" width="280" height="280" ></canvas>
+                    <img class="dongImg" src="web-image/img1.gif" alt="">
+                    <canvas  id="two" width="280" height="280" ></canvas>
+                    <img class="dongImg" src="web-image/img2.gif" alt="">
+                    <canvas  id="three" width="280" height="280"></canvas>
                 </div>
                 <div>
-                    <canvas  id="four" width="200" height="200" style="border:1px solid #e5e5e5"></canvas>
-                    <canvas  id="five" width="200" height="200" style="border:1px solid #e5e5e5"></canvas>
+                    <img class="dongImg" src="web-image/img3.gif" alt="">
+                    <canvas  id="four" width="280" height="280"></canvas>
+                    <img class="dongImg" src="web-image/img7.gif" alt="">
+                    <canvas  id="five" width="280" height="280"></canvas>
+                    <img class="dongImg" src="web-image/img5.gif" alt="">
                 </div>
               </div>
         </div>
-        <div id="contact">
+        <div id="mywork">
+            <div id="front"></div>
+            <div id="detail">
+                <div id="imgs">
+                    <img src="../tmall/image/ff%20-%20副本.jpg" alt="">
+                    <img src="../tmall/image/bb%20-%20副本.jpg" alt="">
+                    <img src="../tmall/image/dd%20-%20副本.jpg" alt="">
+                    <img src="../tmall/image/tian.jpg" alt="">
+                </div>
 
+                <ul class="num">
+                    <li class="selected"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div id="behind"></div>
+        </div>
+        <div id="contact">
+            <img src="web-image/star.gif" alt="">
         </div>
 </div>
 
+</div>
 </div>
 <script src="assets/js/anime.min.js" type="text/javascript"></script>
 <script src="assets/js/demo.js"></script>
@@ -344,9 +370,9 @@
     })();
 
 </script>
-<!--侧边栏-->
+<!--百分比-->
  <script>
-        function percent(classname,num){
+        function percent(classname,num,content){
             var draw = document.getElementById(classname);
             if(!draw.getContext){
                 return false;
@@ -355,19 +381,18 @@
                 centerY=draw.height/2,
                 angle=num, //占的百分数
                 color=[], //"#e5e5e5","red","#F00"
-                font="40px Arial";
+                font="25px center";
             speed1 = 0; //从度数开始70---》表示从70度开始
             context.lineCap="round";  //square 平角的帽
-
             //绘制外圈的圆
             function blueCircle(){
                 context.save();//save() 方法保存当前图像状态的一份拷贝。
                 context.strokeStyle = color[0] || "#e5e5e5"; //设置描边样式
-                context.lineWidth = 5; //设置线宽
+                context.lineWidth = 8; //设置线宽
                 context.beginPath();//路径开始
                 //context.arc(centerX, centerY, 100 , -Math.PI/2, -Math.PI/2 +n*rad, false);
                 //用于绘制圆弧context.arc(x坐标，y坐标，半径，起始角度，终止角度，顺时针/逆时针)
-                context.arc(centerX,centerY,centerX-5,0,2*Math.PI,false);
+                context.arc(centerX,centerY,centerX-50,0,2*Math.PI,false);
                 /*context.moveTo(210,55);
                 context.arc(55,55,20,0,2*Math.PI,false);*/
                 context.stroke();
@@ -378,10 +403,10 @@
             //绘制红色外圈
             function redCircle(n){
                 context.save();
-                context.strokeStyle = color[1] || "purple"; //设置描边样式
-                context.lineWidth = 8; //设置线宽
+                context.strokeStyle = color[1] || "#4ebdd1"; //设置描边样式
+                context.lineWidth = 5; //设置线宽
                 context.beginPath();
-                context.arc(centerX, centerY, centerX-5 ,  -Math.PI /2, (n * 3.6 - 90) * Math.PI / 180, false);
+                context.arc(centerX, centerY, centerX-48 ,  -Math.PI /2, (n * 3.6 - 90) * Math.PI / 180, false);
                 context.stroke();
                 context.closePath();
                 context.restore();
@@ -397,7 +422,8 @@
                 context.textAlign='center';//文本程度对齐方法
                 context.textBaseline='middle';//文本垂曲标的目的，基线位置
                 //绘制字体，并且指定位置
-                context.fillText(n.toFixed(0)+"%", centerX, centerY);
+                context.fillText(content, centerX, centerY-30);
+                context.fillText(n.toFixed(0)+"%", centerX, centerY+30);
                 context.stroke(); //执行绘制
                 context.closePath();
                 context.restore();
@@ -425,13 +451,72 @@
             Down[0].style.display = "block";
             htmleaf[0].style.display = "none";
             // console.log(222)
-            percent("one",0.97);
-            percent("two",0.95);
-            percent("three",0.96);
-            percent("four",0.80);
-            percent("five",0.76);
+            percent("one",0.97,"Html+Css3");
+            percent("two",0.95,"javaScript");
+            percent("three",0.96,"Vue+React");
+            percent("four",0.80,"PHP+nodejs");
+            percent("five",0.76,"others");
         };
  </script>
-</div>
+ <script>
+        var omywork = document.getElementById("mywork")
+        var aLi = omywork.getElementsByTagName("li");
+        var aimg = omywork.getElementsByTagName("img");
+        var ofront = document.getElementById("front");
+        var obehind = document.getElementById("behind");
+
+        var oimgs = document.getElementById('imgs')
+        var nowindex = 0;
+
+        // ocontain.onselectstart = function () {
+        //     return false
+        // }
+        for( var i = 0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover=function () {
+                changeimg(this.index);
+            }
+            aLi[i].onselectstart = function(){
+                return false
+            }
+        }
+        obehind.onclick = function () {
+            nowindex++;
+            if(nowindex ==aLi.length ){
+                nowindex=0;
+            }
+            changeimg(nowindex)
+        }
+        ofront.onclick = function () {
+            nowindex--;
+            if(nowindex ==-1 ){
+                nowindex=aLi.length - 1;
+            }
+            changeimg(nowindex);
+        }
+        function changeimg(xx) {
+            for(var j=0;j<aLi.length;j++){
+                aLi[j].className="";
+            }
+            aLi[xx].className='selected';
+            // oimgs.style.left = -aimg[0].offsetWidth * xx +'px';
+            animate(oimgs,{left:-aimg[0].offsetWidth * xx})
+
+        }
+        play();
+        function play() {
+            timer3 = setInterval(fn,1000);
+        }
+        omywork.onmousemove = function () {
+            clearInterval(timer3);
+        };
+        omywork.onmouseout = function () {
+            play();
+        };
+        function fn() {
+            obehind.onclick();
+        }
+
+    </script>
 </body>
 </html>
