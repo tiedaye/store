@@ -251,24 +251,38 @@
               </div>
         </div>
         <div id="mywork">
-            <div id="front"></div>
-            <div id="detail">
-                <div id="imgs">
-                    <img src="../tmall/image/ff%20-%20副本.jpg" alt="">
-                    <img src="../tmall/image/bb%20-%20副本.jpg" alt="">
-                    <img src="../tmall/image/dd%20-%20副本.jpg" alt="">
-                    <img src="../tmall/image/tian.jpg" alt="">
+            <div class="goleft">
+                <img src="web-image/left.png" alt="">
+            </div>
+            <div class="totalWork">
+                <div class="workImg">
+                    <span>
+                        <img src="web-image/放大镜.png" alt="">
+                        <img src="web-image/clock.png" alt="">
+                        <img src="web-image/拖拽.png" alt="">
+                        <img src="web-image/立方体.png" alt="">
+                    </span>
+                    <span class="bigWork">
+                        <img src="web-image/banner.jpg" alt="">
+                    </span>
+                    <span class="bigWork">
+                        <img src="web-image/background4.png" alt="">
+                    </span>
+                    <span class="bigWork">
+                        <img src="web-image/background3.jpg" alt="">
+                    </span>
                 </div>
 
-                <ul class="num">
-                    <li class="selected"></li>
+                <ul class="mynum">
+                    <li class="workSelect"></li>
                     <li></li>
                     <li></li>
                     <li></li>
                 </ul>
             </div>
-
-            <div id="behind"></div>
+            <div class="goright">
+                <img src="web-image/right.png" alt="">
+            </div>
         </div>
         <div id="contact">
             <img src="web-image/star.gif" alt="">
@@ -458,65 +472,58 @@
             percent("five",0.76,"others");
         };
  </script>
- <script>
-        var omywork = document.getElementById("mywork")
-        var aLi = omywork.getElementsByTagName("li");
-        var aimg = omywork.getElementsByTagName("img");
-        var ofront = document.getElementById("front");
-        var obehind = document.getElementById("behind");
+<!--work-->
+<script>
+    var omywork = document.getElementById("mywork");
+    var aworkImg = omywork.getElementsByClassName("workImg");
+    var aspan = aworkImg[0].getElementsByTagName("span");
+    var amynumli = omywork.getElementsByTagName("li");
+    var agoleft = omywork.getElementsByClassName("goleft");
+    var agoright = omywork.getElementsByClassName("goright");
+    var myworkIndex = 0;
+    console.log(aworkImg[0],amynumli);
+    for(var i = 0;i< amynumli.length;i++){
+        amynumli[i].index = i;
+        amynumli[i].onmousemove = function(){
+            liChange(this.index);
+        }
+    }
+    agoright[0].onclick=function(){
+        ++myworkIndex;
+        if(myworkIndex == amynumli.length){
+            myworkIndex = 0;
+        }
+        liChange(myworkIndex);
+    };
+    agoleft[0].onclick=function(){
+        --myworkIndex;
+        if(myworkIndex == -1){
+            myworkIndex = amynumli.length-1;
+        }
+        liChange(myworkIndex);
+    };
 
-        var oimgs = document.getElementById('imgs')
-        var nowindex = 0;
+    function liChange(xx){
+        for(var j = 0;j<amynumli.length;j++){
+            amynumli[j].className="";
+        }
+        amynumli[xx].className ='workSelect';
+        // animate(aworkImg[0],{left:-aspan[0].offsetWidth * xx})
+    }
+    automove();
+    aworkImg[0].onmousemove = function () {
+        clearInterval(myworkTimer);
+    };
+    aworkImg[0].onmouseout = function () {
+        automove();
+    };
+    function move(){
+        agoright[0].onclick();
+    }
+    function automove(){
+        myworkTimer = setInterval(move,1000);
+    }
+</script>
 
-        // ocontain.onselectstart = function () {
-        //     return false
-        // }
-        for( var i = 0;i<aLi.length;i++){
-            aLi[i].index = i;
-            aLi[i].onmouseover=function () {
-                changeimg(this.index);
-            }
-            aLi[i].onselectstart = function(){
-                return false
-            }
-        }
-        obehind.onclick = function () {
-            nowindex++;
-            if(nowindex ==aLi.length ){
-                nowindex=0;
-            }
-            changeimg(nowindex)
-        }
-        ofront.onclick = function () {
-            nowindex--;
-            if(nowindex ==-1 ){
-                nowindex=aLi.length - 1;
-            }
-            changeimg(nowindex);
-        }
-        function changeimg(xx) {
-            for(var j=0;j<aLi.length;j++){
-                aLi[j].className="";
-            }
-            aLi[xx].className='selected';
-            // oimgs.style.left = -aimg[0].offsetWidth * xx +'px';
-            animate(oimgs,{left:-aimg[0].offsetWidth * xx})
-
-        }
-        play();
-        function play() {
-            timer3 = setInterval(fn,1000);
-        }
-        omywork.onmousemove = function () {
-            clearInterval(timer3);
-        };
-        omywork.onmouseout = function () {
-            play();
-        };
-        function fn() {
-            obehind.onclick();
-        }
-
-    </script>
 </body>
 </html>
