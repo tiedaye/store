@@ -22,10 +22,10 @@ oright.onclick = function () {
     ogo.onclick = function(){
     var top = document.documentElement.scrollTop;
     goup.style.backgroundPosition = '-180px';
-    var timer = setInterval(function () {
+    var timer1 = setInterval(function () {
      scrollTo(0,top*=0.5);
      if(top<1){
-         clearInterval(timer);
+         clearInterval(timer1);
          scrollTo(0,0);
      }
   },50)
