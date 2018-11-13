@@ -250,42 +250,80 @@
                 </div>
               </div>
         </div>
-        <div id="mywork">
-            <div class="goleft">
-                <img src="web-image/left.png" alt="">
-            </div>
-            <div class="totalWork">
-                <div class="workImg">
-                    <span>
-                        <img src="web-image/放大镜.png" alt="">
-                        <img src="web-image/clock.png" alt="">
-                        <img src="web-image/拖拽.png" alt="">
-                        <img src="web-image/立方体.png" alt="">
-                    </span>
-                    <span class="bigWork">
-                        <img src="web-image/banner.jpg" alt="">
-                    </span>
-                    <span class="bigWork">
-                        <img src="web-image/background4.png" alt="">
-                    </span>
-                    <span class="bigWork">
-                        <img src="web-image/background3.jpg" alt="">
-                    </span>
-                </div>
+        <div id="mywork" style="position: relative">
+                <p> LOOK HERE!</p>
 
-                <ul class="mynum">
-                    <li class="workSelect"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+            <img src="web-image/nnn.gif" style="width: 380px;height: 364px;position: absolute;top:313px;left:50px;" alt="">
+            <div class="wordcard">
+                <ul class="worktitle">
+                    <li class="smalltitle workSelect">所有</li>
+                    <li class="smalltitle">仿站</li>
+                    <li class="smalltitle">vueapp</li>
+                    <li class="smalltitle" >原生小发现</li>
                 </ul>
+
+                <!--//所有-->
+                <div class="basework allwork show">
+                        <a href="http://localhost:63342/myfellow25/mywebsite/time%E4%BE%8B%E5%AD%90.html?_ijt=ctevs6srsousmt6152vltc6auq">
+                            <img src="web-image/clock.png" alt="">
+                        </a>
+                        <a href="http://localhost:63342/myfellow25/mywebsite/%E6%97%8B%E8%BD%AC%E7%AB%8B%E6%96%B9%E4%BD%93.html?_ijt=6cm83rb7bokgprf148r303p753">
+                            <img src="web-image/立方体.png" alt="">
+                        </a>
+                        <a href="http://localhost:63342/myfellow25/mywebsite/%E6%8B%96%E6%8B%BD.html?_ijt=6cm83rb7bokgprf148r303p753">
+                            <img src="web-image/拖拽.png" alt="">
+                        </a>
+                        <a href=" http://localhost:8080/movie">
+                            <img src="web-image/vueapp.png" alt="">
+                        </a>
+                        <a href="http://localhost:3000/">
+                            <img src="web-image/meituan.jpg" alt="">
+                        </a>
+                        <a href="http://localhost:63342/myfellow25/mywebsite/%E6%94%BE%E5%A4%A7%E9%95%9C/%E6%94%BE%E5%A4%A7%E9%95%9C.html?_ijt=rpbvur8n7ljl3tuf7l4ia1bcpl">
+                            <img src="web-image/放大镜.png" alt="">
+                        </a>
+                </div>
+                <!--防战-->
+                <div class="basework meituenwork">
+                    <a href="http://localhost:3000/">
+                        <img src="web-image/meituan.jpg" alt="">
+                    </a>
+                </div>
+                <!--vueapp-->
+                <div class="basework vueapp">
+                    <a href=" http://localhost:8080/movie">
+                        <img src="web-image/vueapp.png" alt="">
+                    </a>
+                </div>
+                <!--原生小发现-->
+                <div class="basework elsework">
+                        <a href="http://localhost:63342/myfellow25/mywebsite/time%E4%BE%8B%E5%AD%90.html?_ijt=ctevs6srsousmt6152vltc6auq">
+                            <img src="web-image/clock.png" alt="">
+                        </a>
+                        <a href="http://localhost:63342/myfellow25/mywebsite/%E6%97%8B%E8%BD%AC%E7%AB%8B%E6%96%B9%E4%BD%93.html?_ijt=6cm83rb7bokgprf148r303p753">
+                            <img src="web-image/立方体.png" alt="">
+                        </a>
+                        <a href="http://localhost:63342/myfellow25/mywebsite/%E6%8B%96%E6%8B%BD.html?_ijt=6cm83rb7bokgprf148r303p753">
+                            <img src="web-image/拖拽.png" alt="">
+                        </a>
+                </div>
             </div>
-            <div class="goright">
-                <img src="web-image/right.png" alt="">
-            </div>
+            <img src="web-image/小丸子.jpeg" style="position: absolute;top:200px;right:146px;" alt="">
+
         </div>
         <div id="contact">
             <img src="web-image/star.gif" alt="">
+            <div class="callme">
+                CONNECT ME
+                <img src="web-image/cat.gif" style="width: 100px;height: 100px;">
+            </div>
+            <div class="tell">
+                tell:18846085254<br>
+                e-mail:18846085254@163.com<br>
+                wx:zs781792980<br>
+                QQ:781792980<br>
+                <img src="web-image/动态小人.gif" alt="">
+            </div>
         </div>
 </div>
 
@@ -473,57 +511,12 @@
         };
  </script>
 <!--work-->
+<script src="assets/js/jquery-1.12.4.js"></script>
 <script>
-    var omywork = document.getElementById("mywork");
-    var aworkImg = omywork.getElementsByClassName("workImg");
-    var aspan = aworkImg[0].getElementsByTagName("span");
-    var amynumli = omywork.getElementsByTagName("li");
-    var agoleft = omywork.getElementsByClassName("goleft");
-    var agoright = omywork.getElementsByClassName("goright");
-    var myworkIndex = 0;
-    console.log(aworkImg[0],amynumli);
-    for(var i = 0;i< amynumli.length;i++){
-        amynumli[i].index = i;
-        amynumli[i].onmousemove = function(){
-            liChange(this.index);
-        }
-    }
-    agoright[0].onclick=function(){
-        ++myworkIndex;
-        if(myworkIndex == amynumli.length){
-            myworkIndex = 0;
-        }
-        liChange(myworkIndex);
-    };
-    agoleft[0].onclick=function(){
-        --myworkIndex;
-        if(myworkIndex == -1){
-            myworkIndex = amynumli.length-1;
-        }
-        liChange(myworkIndex);
-    };
-
-    function liChange(xx){
-        for(var j = 0;j<amynumli.length;j++){
-            amynumli[j].className="";
-        }
-        amynumli[xx].className ='workSelect';
-        // animate(aworkImg[0],{left:-aspan[0].offsetWidth * xx})
-    }
-    automove();
-    aworkImg[0].onmousemove = function () {
-        clearInterval(myworkTimer);
-    };
-    aworkImg[0].onmouseout = function () {
-        automove();
-    };
-    function move(){
-        agoright[0].onclick();
-    }
-    function automove(){
-        myworkTimer = setInterval(move,1000);
-    }
+  $(".smalltitle").on("click",function () {
+      $(this).addClass("workSelect").siblings().removeClass("workSelect");
+      $(".basework").eq($(this).index()).addClass("show").siblings().removeClass("show");
+  })
 </script>
-
 </body>
 </html>
