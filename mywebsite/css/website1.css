@@ -172,39 +172,45 @@ body{
 #myWebsite #mywork{
     width:100%;
     height: 600px;
+    overflow: hidden;
     margin-top: 100px;
-    background: url("../web-image/img11.png") center center no-repeat;
+    border: 1px solid transparent;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
 }
-#myWebsite #mywork #detail{
-    width: 520px;
-    height: 280px;
-    margin: 100px auto;
-    position: relative;
+#myWebsite #mywork .worktitle{
     overflow: hidden;
 }
-#detail #imgs{
-    width: 2080px;
-    position: absolute;
+#mywork img{
+    width: 180px;
+    height: 180px;
 }
-#detail img{
-    width: 520px;
-    height: 280px;
+#mywork .wordcard{
+    width:600px;
+    height: 700px;
+    margin: 80px 535px;
+    position: relative;
+ }
+#mywork .wordcard .basework{
+    position: absolute;
+    top: 50px;
+    left:-44px;
+    display: none;
+}
+#mywork .worktitle li{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
     float: left;
 }
-#detail .num{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    z-index: 9999999;
-}
-#detail .arrows{
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    z-index: 9999999;
-}
-#detail li.selected{
+#mywork .workSelect{
     background: #0086b3;
+}
+#mywork .wordcard .show{
+    display: block;
 }
 
 /*//////////*/
@@ -218,4 +224,28 @@ body{
 }
 #myWebsite #goup:hover{
     background-position: -93px;
+}
+#myWebsite #contact{
+    position: relative;
+    background: white;
+}
+#myWebsite #contact .callme{
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top:14px;
+    right:627px;
+    color: black
+}
+#myWebsite #contact .tell{
+    position: absolute;
+    top:100px;
+    right:60px;
+    text-align: center;
+    font-size: 25px;
+    color:blue;
 }
