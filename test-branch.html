@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+<script>
+    var foo = {n:100}
+    var bar = foo
+    foo = {n:200}
+    foo.x = foo
+    console.log(foo,foo.x,bar.x)
+
+var obj = new Object()
+    obj.a = 0;
+    console.log(obj)
+    // var a = 2
+    // var b = a = 4
+    // console.log(a,b)
+  // inNaN 判断是否是非数字值  有一个隐式转换
+    q = isNaN(0)  // false
+    w = isNaN(null) // false
+    e = isNaN(undefined) // true
+    r = isNaN({}) // ture
+    t = isNaN(false) // false
+    console.log(q,w,e,r,t)
+</script>
+</html>
